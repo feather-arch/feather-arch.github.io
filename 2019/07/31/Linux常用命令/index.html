@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css"> <link rel="stylesheet" href="/css/style.css"> <link rel="stylesheet" href="/css/menu.css"> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "moonlit",
+	     });
+	}); 
+	</script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+</head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><img src="/images/person_1.jpg"></div>
+    <span>2019-07-31</span>
+    <h2></h2>
+    </div>
+</div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <p>##Linux常用命令</p>
+<p>###处理目录常用命令<br>    ls: 列出目录<br>    cd：切换目录<br>    pwd：显示目前的目录<br>    mkdir：创建一个新的目录<br>    touch:创建一个空的文件<br>    rmdir：删除一个空的目录<br>    cp: 复制文件或目录<br>    rm: 移除文件或目录<br>    mv: 移动文件与目录，或修改文件与目录的名称</p>
+<h3 id="ls-列出目录"><a href="#ls-列出目录" class="headerlink" title="ls (列出目录)"></a>ls (列出目录)</h3><pre><code>-a ：全部的文件，连同隐藏档( 开头为 . 的文件) 一起列出来(常用)
+-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)
+-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</code></pre><h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd (切换目录)"></a>cd (切换目录)</h3><pre><code>cd是用来切换工作目录的命令，切换的是相对路径或者绝对路径
+cd .. 表示去到当前目录的上一级目录
+cd ~  表示返回根目录，即/root</code></pre><h3 id="pwd-显示目前所在的目录"><a href="#pwd-显示目前所在的目录" class="headerlink" title="pwd (显示目前所在的目录)"></a>pwd (显示目前所在的目录)</h3><pre><code>-P ：显示出确实的路径，而非使用连结 (link) 路径。</code></pre><h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir (创建新目录)"></a>mkdir (创建新目录)</h3><pre><code>-m ：配置文件的权限喔！直接配置，不需要看默认权限 。
+-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</code></pre><p>###touch (创建文件)</p>
+<h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir (删除空的目录)"></a>rmdir (删除空的目录)</h3><pre><code>-p ：连同上一级『空的』目录也一起删除</code></pre><h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp (复制文件或目录)"></a>cp (复制文件或目录)</h3><pre><code>-f：为强制的意思，若目标文件已经存在且无法开启，则移除后再尝试一次；
+-i：若目标档已经存在时，在覆盖时会先询问动作的进行(常用)
+-p：连同文件的属性一起复制过去，而非使用默认属性(备份常用)
+r：递归持续复制，用于目录的复制；(常用)</code></pre><h3 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm (移除文件或目录)"></a>rm (移除文件或目录)</h3><pre><code>-f ：就是强制的意思，忽略不存在的文件，不会出现警告信息；
+-i ：互动模式，在删除前会询问使用者是否动作
+-r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！</code></pre><p>###Linux 文件内容查看<br>    cat  由第一行开始显示文件内容<br>    tac  从最后一行开始显示，可以看出 tac 是 cat 的倒著写！<br>    nl   显示的时候，顺道输出行号！<br>    more 一页一页的显示文件内容<br>    less 与 more 类似，但是比 more 更好的是，他可以往前翻页！<br>    head 只看头几行<br>    tail 只看尾巴几行</p>
+<h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><pre><code>一页一页翻动
+
+空白键 (space)：代表向下翻一页；
+Enter         ：代表向下翻『一行』；
+/字串         ：代表在这个显示的内容当中，向下搜寻『字串』这个关键字；
+:f            ：立刻显示出档名以及目前显示的行数；
+q             ：代表立刻离开 more ，不再显示该文件内容。
+b 或 [ctrl]-b ：代表往回翻页，不过这动作只对文件有用，对管线无用。</code></pre><h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><pre><code>一页一页翻动，与more类似。
+空白键    ：向下翻动一页；
+[pagedown]：向下翻动一页；
+[pageup]  ：向上翻动一页；
+/字串     ：向下搜寻『字串』的功能；
+?字串     ：向上搜寻『字串』的功能；
+n         ：重复前一个搜寻 (与 / 或 ? 有关！)
+N         ：反向的重复前一个搜寻 (与 / 或 ? 有关！)
+q         ：离开 less 这个程序；</code></pre><h3 id="head"><a href="#head" class="headerlink" title="head"></a>head</h3><p>   显示文件前几行<br>   -n : 后面接数字，代表显示几行</p>
+<h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><pre><code>显示文件后几行
+ -n :后面接数字，代表显示几行。    </code></pre>
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/07/24/hello-world/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>Hello World</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<button class="menu-trigger"></button>
+  <div class="menu">
+	<div class="menu-head">
+	   <span class="layer">
+	<div class="col">
+	  <div class="row for-pic">
+	   <div class="profile-pic">     
+	   <img src="/images/person_1.jpg" alt="Asif Mughal"> 
+	         </div>
+	  </div>
+	         <div class="row for-name">
+	         <p>John Doe</p>
+	        <span class="tagline">Hello, World!</span>
+	          </div>
+	         </div> 
+	  </span>
+	</div>
+	<nav class="menu-container">
+	<ul class="menu-items">
+	<li><span class="item-icon"><i class="fa fa-home"></i></span> <a href="/">首页</a></li>
+  <li><span class="item-icon"><i class="fa fa-archive"></i></span> <a href="/archives/">归档</a></li> 
+	<li class="has-sub"> <span class="item-icon"> <i class="fa fa-bookmark"></i> </span>
+	<span class="dropdown-heading">页面</span><ul>
+   <li> <a href="/guestbook">留言</a></li><li> <a href="/about">关于</a></li>
+	  </ul>
+	 </li>
+    <li class="has-sub"> <span class="item-icon"> <i class="fa fa-link"></i> </span>
+	 <span class="dropdown-heading">友链</span><ul>
+   <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</nav>
+  </div>
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
