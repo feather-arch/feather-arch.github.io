@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="John Doe">
   <meta name="keywords" content>
@@ -32,8 +32,8 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><img src="/images/person_1.jpg"></div>
-    <span>2019-07-24</span>
-    <h2>Hello World</h2>
+    <span>2019-08-04</span>
+    <h2></h2>
     </div>
 </div>
 </div>
@@ -41,19 +41,28 @@
   <div class="lx-post"> 
     <div class="lx-entry padding">
       <div>
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="useradd（建立用户账号）"><a href="#useradd（建立用户账号）" class="headerlink" title="useradd（建立用户账号）"></a>useradd（建立用户账号）</h3><pre><code>用法：useradd[参数][用户账号]
+-d  指定用户登入时的启动目录
+-g  指定用户所属群组
+-M  不要自动建立用户的登入目录
+-u  指定用户id
+-r  建立系统账号
+-s  指定用户登陆后所使用的shell</code></pre><h3 id="userdel-删除用户账户"><a href="#userdel-删除用户账户" class="headerlink" title="userdel (删除用户账户)"></a>userdel (删除用户账户)</h3><pre><code>用法： userdel [参数][用户账号]
+-r  删除用户登录目录以及目录中所有文件</code></pre><h3 id="passwd-更改密码"><a href="#passwd-更改密码" class="headerlink" title="passwd (更改密码)"></a>passwd (更改密码)</h3><pre><code>用法： passwd [参数][用户帐号]
+-d  删除密码
+-f  强制执行
+-l  停止账号使用
+-u  允许账号使用
+-g  修改群组密码</code></pre><h3 id="newgrp-用于登录另一个用户组"><a href="#newgrp-用于登录另一个用户组" class="headerlink" title="newgrp (用于登录另一个用户组)"></a>newgrp (用于登录另一个用户组)</h3><pre><code>用法  newgrp [组名]</code></pre><h3 id="usermod-修改用户账号属性"><a href="#usermod-修改用户账号属性" class="headerlink" title="usermod (修改用户账号属性)"></a>usermod (修改用户账号属性)</h3><pre><code>用法： usermod [参数][用户账号]
+-s  修改用户登陆时的shell
+-g  修改用户所属群组
+-l  修改账户名称
+-u  修改用户id
+-L  锁定账户
+-U  接触密码锁定</code></pre><h3 id="groupmode-修改用户组名"><a href="#groupmode-修改用户组名" class="headerlink" title="groupmode (修改用户组名)"></a>groupmode (修改用户组名)</h3><pre><code>用法：groupmode [参数][群组名称]
+-n  设置使用的群组名称</code></pre><h3 id="UID-用户身份标识符，"><a href="#UID-用户身份标识符，" class="headerlink" title="UID 用户身份标识符，"></a>UID 用户身份标识符，</h3><p>在centos7中UID 1-999为虚拟用户，不用登陆，无登陆权限。一般满足服务需求而创建的账户。普通用户1000起，超级用户是0.<br>Centos6普通用户500起，1-499为虚拟用户，超级用户是0.</p>
+<h3 id="passwd-文件"><a href="#passwd-文件" class="headerlink" title="passwd 文件"></a>passwd 文件</h3><pre><code>文件用处：用于存放用户局可读
+存储格式： 用户名：密码散列：用户ID：用户组ID：用户信息：用户目录：用户登陆后使用的shell</code></pre><h3 id="shadow"><a href="#shadow" class="headerlink" title="shadow"></a>shadow</h3><p>   文件用处：存放用户密码散列、密码管理信息等<br>    存储路径：/etc/shadow<br>    文件特点:文本格式/仅对root可读可写<br>    存储格式：用户名：加密的密码口令：上次修改口令日期：口令两次修改最小天数：口令两次修改最大天数：口令失效前多少天像用户警告：被禁止登录前的有效天数：账号被禁止登录时间：保留域</p>
 
       </div>
     </div>		
@@ -62,7 +71,7 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2019/07/31/Linux基础命令/">
+		<a class="copy" href="/2019/08/04/搭建lamp/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
@@ -75,12 +84,12 @@
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
 		<div class="overlay"></div>
-		<a class="copy" href="#">
+		<a class="copy" href="/2019/07/31/Linux基础命令/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>没有更早的文章</h3>
+						<h3></h3>
 					</div>
 				</div>
 			</div>
