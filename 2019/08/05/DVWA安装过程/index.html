@@ -32,7 +32,7 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><img src="/images/person_1.jpg"></div>
-    <span>2019-08-04</span>
+    <span>2019-08-05</span>
     <h2></h2>
     </div>
 </div>
@@ -41,20 +41,17 @@
   <div class="lx-post"> 
     <div class="lx-entry padding">
       <div>
-        <p>###搭建LAMP环境</p>
-<p>   LAMP=linux+apache+mysql+php</p>
-<p>###安装apache</p>
-<pre><code>yum install httpd* -y 
-systemctl  start httpd 
-systemctl enable httpd  开启开机自启动
-systemctl  stop  firewalld  关闭防火墙</code></pre><p>###安装PHP<br>  yum install php php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash -y     安装PHP默认php5.4<br>  升级需要执行以下命令<br>   rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/epel-release.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el7/epel-release.rpm</a><br>   rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/webtatic-release.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</a><br>   删除旧版本<br>  yum remove php-common -y</p>
-<p>###测试PHP<br>  php -v 显示版本<br>  php -r “echo phpinfo();” 创建phpinfo<br>  进入/var/www/html/ 创建test.php 文件中写入如下的代码：<br>  <?php phpinfo();?> 最后在浏览器中访问该页面</p>
-<p> apache的配置文件位置：/etc/httpd/conf/httpd.conf</p>
-<p>serverroot 在apache配置文件中表示apache存放的位置</p>
-<p>documentroot 表示站点源码存放的位置 默认位置/var/www/html<br>(注意：修改完配置文件一定要重启服务)</p>
-<p>###安装mysql</p>
-<p>  yum install mariadb mariadb-server -y  安装mysql<br>  systemctl start mariadb<br>  systemctl enable mariadb</p>
-<p>  mysql_secure_installation   配置mysql<br>  mysql -Version   查看版本<br>  msyql默认端口3306<br>  在终端登录mysql<br>  mysql -uroot -p </p>
+        <h3 id="进入到-var-www目录下，然后wget下载dvwa文件。"><a href="#进入到-var-www目录下，然后wget下载dvwa文件。" class="headerlink" title="进入到/var/www目录下，然后wget下载dvwa文件。"></a>进入到/var/www目录下，然后wget下载dvwa文件。</h3><p>   cd /var/www<br>   wget <a href="https://github.com/ethicalhack3r/DVWA/archive/master.zip" target="_blank" rel="noopener">https://github.com/ethicalhack3r/DVWA/archive/master.zip</a></p>
+<h3 id="解压master-zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa"><a href="#解压master-zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa" class="headerlink" title="解压master.zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa."></a>解压master.zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa.</h3><p>   unzip master.zip -d html/<br>   cd html &amp;&amp; mv DVWA-master dvwa</p>
+<h3 id="进入dvwa-config文件夹中，把config-inc-php-dist复制一份，命名为config-inc-php"><a href="#进入dvwa-config文件夹中，把config-inc-php-dist复制一份，命名为config-inc-php" class="headerlink" title="进入dvwa/config文件夹中，把config.inc.php.dist复制一份，命名为config.inc.php"></a>进入dvwa/config文件夹中，把config.inc.php.dist复制一份，命名为config.inc.php</h3><pre><code>cd config/
+cp config.inc.php.dist config.inc.php</code></pre><p>###在浏览器中输入自己的ip /dvwa,查看DVWA</p>
+<p>###进入到/etc文件夹下，把php.ini备份一份为php.ini.bak<br>   cd /etc<br>   cp php.ini php.ini.bak</p>
+<p>###打开php.ini，把allow_url_include=Off修改为On，保存退出，重启服务<br>    vi php.ini（allow_url_include=Off修改为On）<br>    systemctl restart httpd</p>
+<p>###进入/var/www/html/dvwa/config文件夹下，修改config.inc.php<br>    cd  /var/www/html/dvwa/config</p>
+<p>###修改config.inc.php,把$_DVWA[ ‘db_password ’ ] = ‘p@ssw0rd’修改为mysql中root用户的密码，填写公钥和私钥。<br>    vi  config.inc.php<br>    public_key: 6LePqhAUAAAAAH6Bn2okO9-8G-zNw46PNhotV4Q6<br>    private_key: 6LePqhAUAAAAAMVqhBbFr1NVA9H13FkyfAgBeZYx</p>
+<p>###保存退出</p>
+<p>###进入/var/www/html文件中修改dvwa的用户和用户组<br>   cd /var/www/html<br>   chown -R apache:apache dvwa/</p>
+<p>###重启服务<br>   systemctl restart httpd</p>
 
       </div>
     </div>		
@@ -63,12 +60,12 @@ systemctl  stop  firewalld  关闭防火墙</code></pre><p>###安装PHP<br>  yum
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2019/08/05/DVWA安装过程/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3></h3>
+						<h3>没有更新的文章</h3>
 					</div>
 				</div>
 			</div>
@@ -76,7 +73,7 @@ systemctl  stop  firewalld  关闭防火墙</code></pre><p>###安装PHP<br>  yum
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2019/08/04/Linux用户与组管理/">
+		<a class="copy" href="/2019/08/04/搭建lamp/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
