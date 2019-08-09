@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>archives: 8/2019: 2019 | Hexo</title>
+  <title>素数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="John Doe">
   <meta name="keywords" content>
@@ -26,53 +26,65 @@
   
 </head>
 <body>
+<div class="single">
 <div id="page">
-<div id="lx-aside" style="background-image: url(/images/cover.jpg)">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
   <div class="overlay">
-  <div class="featured">
+  <div class="page-title">
     <div class="avatar"><img src="/images/person_1.jpg"></div>
-    <span>John Doe</span>
-    <h2>Hexo</h2>
-    <span>——</span>
-  </div>
-  </div>
+    <span>2019-08-08</span>
+    <h2>素数</h2>
+    </div>
+</div>
 </div>
 <div id="lx-main-content">
-  <div class="lx-post">
-  <h2 class="archive">归档</h2>
-    <div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-08</span>
-    <h2><a href="/2019/08/08/素数/">素数</a></h2>
-    <p></p></div></div><div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-07</span>
-    <h2><a href="/2019/08/07/php输出五角星/">php输出五角星</a></h2>
-    <p></p></div></div><div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-06</span>
-    <h2><a href="/2019/08/06/PHP/">PHP</a></h2>
-    <p></p></div></div><div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-05</span>
-    <h2><a href="/2019/08/05/防火墙/"></a></h2>
-    <p></p></div></div><div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-05</span>
-    <h2><a href="/2019/08/05/Linux三种安装方式/"></a></h2>
-    <p></p></div></div><div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-05</span>
-    <h2><a href="/2019/08/05/DVWA安装过程/"></a></h2>
-    <p></p></div></div><div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-04</span>
-    <h2><a href="/2019/08/04/搭建lamp/"></a></h2>
-    <p></p></div></div><div class="lx-entry padding"><div>
-    <span class="lx-post-detail">2019-08-04</span>
-    <h2><a href="/2019/08/04/Linux用户与组管理/"></a></h2>
-    <p></p></div></div>
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <h3 id="素数"><a href="#素数" class="headerlink" title="素数"></a>素数</h3><p>&lt;?php<br>header(“charset=utf-8”);<br>$num = fgets(STDIN);<br>$num =  trim($num);</p>
+<p>$a=0;//计数器初始化<br>for($i=1;$i&lt;=$num;$i++)<br>{<br>   if($num % $i==0)<br>{<br>      $a++;<br>   }<br>}<br>if($a==2)//如果能够整除这个数只有1个或者2个，那么它就是素数<br>{<br>  echo $num .”是素数”;<br>}else<br>{<br>  echo $num.”不是素数”;<br>}</p>
+<h3 id="for遍历"><a href="#for遍历" class="headerlink" title="for遍历"></a>for遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$arr=[  </span><br><span class="line">  &apos;name&apos; =&gt;&apos;zs&apos;,  </span><br><span class="line">  &apos;age&apos; =&gt; 12,  </span><br><span class="line">  &apos;addr&apos; =&gt; &apos;bj&apos;</span><br><span class="line">];</span><br><span class="line"> echo $arr[&apos;addr&apos;];</span><br><span class="line"> echo &quot;&lt;br&gt;&quot;;</span><br><span class="line"> foreach ($arr as $key =&gt; $value)&#123;    </span><br><span class="line">     echo $key.&apos;=&gt;&apos;.$value.&apos;&lt;br&gt;&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/08/07/php输出五角星/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>php输出五角星</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
 
 <footer>
   <div>
   Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
   </div>
 </footer>
-  </div>
-</div>
 </div>
 <button class="menu-trigger"></button>
   <div class="menu">
