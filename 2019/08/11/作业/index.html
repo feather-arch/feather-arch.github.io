@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>作业 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css"> <link rel="stylesheet" href="/css/style.css"> <link rel="stylesheet" href="/css/menu.css"> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "moonlit",
+	     });
+	}); 
+	</script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+</head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><img src="/images/person_1.jpg"></div>
+    <span>2019-08-11</span>
+    <h2>作业</h2>
+    </div>
+</div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <h4 id="初始化界面"><a href="#初始化界面" class="headerlink" title="初始化界面"></a>初始化界面</h4><p>index.php:</p>
+<?php
+
+Require_once '../basedir/header.php';
+
+?>
+
+<?php
+Require_once "xinwenzhanshi.php";
+?>
+
+<?php
+
+Require_once '../basedir/footer.php';
+
+?>
+
+<h4 id="lib-目录存放脚本"><a href="#lib-目录存放脚本" class="headerlink" title="lib //目录存放脚本"></a>lib //目录存放脚本</h4><p>login.php:</p>
+<?php
+
+Require_once '../basedir/header.php';
+
+?>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head &gt; &lt;meta charset=&quot;utf-8&quot;&gt;&lt;/head&gt;
+&lt;body&gt;
+
+&lt;hr&gt;
+
+&lt;div style=&quot;width:100%;text-align:center&quot;&gt;
+&lt;tr&gt;
+&lt;h1&gt;输入编号&lt;/h1&gt;
+&lt;form action=&quot;login.php&quot; method=&quot;post&quot; &gt;
+    &lt;p&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;手机号/邮箱/用户名&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;password&quot; name=&quot;passwd&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input class=&quot;input_code&quot; type=&quot;text&quot; name=&quot;verifycode&quot; placeholder=&quot;验证码&quot;&gt;&lt;/p&gt;
+    &lt;img class=&quot;verifycode&quot; src=&quot;https://passport.360.cn/captcha.php?m=create&amp;app=i360&amp;scene=login&amp;userip=&amp;level=default&amp;sign=8820a4&amp;r=1564540365&amp;border=none&amp;_=1564540365972&quot;&gt;
+
+    &lt;p&gt;&lt;input type=&quot;submit&quot; name=&quot;提交&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;
+
+&lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&quot;right&quot;&gt;
+            &lt;a href=&quot;../lib/register.php&quot;&gt;&lt;button  align=&quot;right&quot;&gt;用户注册&lt;/button&gt;&lt;/a&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><?php
+
+Require_once '../basedir/footer.php';
+
+?>
+
+<?php
+error_reporting(E_ALL^E_NOTICE);
+
+$uname = base64_encode($_POST['name']);
+
+$upass = md5($_POST['passwd']);
+
+if ($uname && $upass){
+
+//    echo base64_decode($uname);
+
+    $f = fopen('../data/yonghuxinxiwenjian/yh.db','r');
+    while (!feof($f)){
+        $data = fgets($f);
+        $arr = explode('|',$data);
+
+        if(count($arr) !=4 ){
+            continue;
+
+        }
+//        echo base64_decode($arr[0]);
+
+        if ($arr[0] == $uname && $arr[1] == $upass){
+
+            $idd = base64_decode($arr[0]);
+            session_start();
+            $_SESSION['username']=$idd;
+
+            echo "<script>alert('登录成功！将跳转到主页！');location.href='index.php';";
+            break;
+        }
+
+    }
+    echo "<script>alert('用户名或者密码错误，请重新登录！');location.href='login.php';</script>";
+}
+?>
+
+
+
+<p>ogout.php:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">error_reporting(E_ALL^E_NOTICE);</span><br><span class="line">unset($_SESSION[&apos;username&apos;]);</span><br><span class="line">?&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;    </span><br><span class="line">       &lt;meta charset=&quot;UTF-8&quot;&gt;    </span><br><span class="line">       &lt;script&gt;alert(&apos;登出成功！将跳转到主页！&apos;);location.href=&apos;index.php&apos;;&lt;/script&gt;&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>del.php:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">error_reporting(E_ALL^E_NOTICE);</span><br><span class="line">if(!isset($_SESSION[&apos;username&apos;]))&#123;    </span><br><span class="line">    echo &quot;&lt;script&gt;alert(&apos;请登录后查看！&apos;);location.href=&apos;login.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line"> &#125;</span><br><span class="line"> ?&gt;</span><br><span class="line"> &lt;?php</span><br><span class="line"> Require_once &apos;../basedir/header.php&apos;;</span><br><span class="line"> ?&gt;</span><br><span class="line"> &lt;html&gt;</span><br><span class="line"> &lt;div style=&quot;width:100%;text-align:center&quot;&gt;  </span><br><span class="line">     &lt;h1&gt;删除新闻&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">if(isset($_SESSION[&apos;username&apos;])) &#123;    </span><br><span class="line">   echo &lt;&lt;&lt;EOF  </span><br><span class="line">   &lt;table align=&quot;center&quot; width=&quot;600&quot;&gt;     </span><br><span class="line">       &lt;tr &gt;&lt;th id=&quot;sctx&quot;&gt;&lt;a href=&quot;shangchuantouxiang.php&quot;&gt;上传头像&lt;/a&gt;&lt;/th&gt;&lt;th id=&quot;xwjm&quot;&gt;&lt;a href=&quot;zengjiaxinwen.php&quot;&gt;增加新闻&lt;/th&gt;&lt;th id=&quot;scxw&quot;&gt;&lt;a href=&quot;index.php&quot;&gt;新闻界面&lt;/th&gt;&lt;th id=&quot;xgmm&quot;&gt;&lt;a href=&quot;xiugaimima.php&quot;&gt;修改密码&lt;/th&gt;&lt;/tr&gt;    </span><br><span class="line">   &lt;/table&gt;  </span><br><span class="line">   &lt;table align=&quot;center&quot; border=&quot;0&quot; width=&quot;1200&quot;&gt;</span><br><span class="line">EOF;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;?php$f = fopen(&apos;../data/xinwenwenjian/new.db&apos;,&apos;r&apos;);</span><br><span class="line">while (!feof($f)) &#123;     </span><br><span class="line">    $str = fgets($f);    </span><br><span class="line">    $shuzu = explode(&quot;|&quot;, $str);    </span><br><span class="line">    //echo &quot;长度为：&quot;.strlen($shuzu[0]);   </span><br><span class="line">    if (count($shuzu) != 6) &#123;       </span><br><span class="line">    continue;    </span><br><span class="line">    &#125;    </span><br><span class="line">    $shuzu = explode(&apos;|&apos;, $str);//按照|进行分割    </span><br><span class="line">    $biaoti = base64_decode($shuzu[1]);    </span><br><span class="line">    echo &lt;&lt;&lt;EOF       </span><br><span class="line">      &lt;tr&gt;            </span><br><span class="line">          &lt;th align=&quot;center&quot; &gt;&lt;h2&gt;标题：&#123;$biaoti&#125;&lt;/h2&gt;&lt;/th&gt;       </span><br><span class="line">       &lt;/tr&gt;        </span><br><span class="line">       &lt;tr&gt;            </span><br><span class="line">          &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;shanchuxinwenhoutai.php?action&#123;$biaoti&#125;&quot;&gt;&lt;h4&gt;删除新闻&lt;/h4&gt;&lt;/a&gt;&lt;/td&gt;          </span><br><span class="line">       &lt;/tr&gt;       </span><br><span class="line">       &lt;br&gt;</span><br><span class="line">EOF;</span><br><span class="line">&#125;    </span><br><span class="line">?&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">Require_once &apos;../basedir/footer.php&apos;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/08/11/新闻/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>新闻</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<button class="menu-trigger"></button>
+  <div class="menu">
+	<div class="menu-head">
+	   <span class="layer">
+	<div class="col">
+	  <div class="row for-pic">
+	   <div class="profile-pic">     
+	   <img src="/images/person_1.jpg" alt="Asif Mughal"> 
+	         </div>
+	  </div>
+	         <div class="row for-name">
+	         <p>John Doe</p>
+	        <span class="tagline">Hello, World!</span>
+	          </div>
+	         </div> 
+	  </span>
+	</div>
+	<nav class="menu-container">
+	<ul class="menu-items">
+	<li><span class="item-icon"><i class="fa fa-home"></i></span> <a href="/">首页</a></li>
+  <li><span class="item-icon"><i class="fa fa-archive"></i></span> <a href="/archives/">归档</a></li> 
+	<li class="has-sub"> <span class="item-icon"> <i class="fa fa-bookmark"></i> </span>
+	<span class="dropdown-heading">页面</span><ul>
+   <li> <a href="/guestbook">留言</a></li><li> <a href="/about">关于</a></li>
+	  </ul>
+	 </li>
+    <li class="has-sub"> <span class="item-icon"> <i class="fa fa-link"></i> </span>
+	 <span class="dropdown-heading">友链</span><ul>
+   <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</nav>
+  </div>
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

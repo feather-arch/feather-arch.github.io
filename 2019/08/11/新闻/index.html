@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>新闻 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css"> <link rel="stylesheet" href="/css/style.css"> <link rel="stylesheet" href="/css/menu.css"> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "moonlit",
+	     });
+	}); 
+	</script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+</head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><img src="/images/person_1.jpg"></div>
+    <span>2019-08-11</span>
+    <h2>新闻</h2>
+    </div>
+</div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <h3 id="登录页面"><a href="#登录页面" class="headerlink" title="登录页面"></a>登录页面</h3><h5 id="login-html"><a href="#login-html" class="headerlink" title="login.html"></a>login.html</h5><!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <title>登录页面</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+
+<div class="box">
+
+<pre><code>&lt;div class=&quot;top&quot;&gt;
+    &lt;h1&gt;登录&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;form action=&quot;login.php&quot; method=&quot;post&quot;&gt;
+
+    &lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;手机号/邮箱/用户名&quot;&gt;
+    &lt;br&gt;
+    &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;密码&quot;&gt;
+    &lt;br&gt;
+    &lt;input class=&quot;input_code&quot; type=&quot;text&quot; name=&quot;verifycode&quot; placeholder=&quot;验证码&quot;&gt;
+    &lt;img class=&quot;verifycode&quot; src=&quot;https://passport.360.cn/captcha.php?m=create&amp;app=i360&amp;scene=login&amp;userip=&amp;level=default&amp;sign=8820a4&amp;r=1564540365&amp;border=none&amp;_=1564540365972&quot;&gt;
+    &lt;br&gt;
+    &lt;a class=&quot;getpass&quot; href=&quot;./reg.html&quot;&gt;注册账号&lt;/a&gt;
+    &lt;br&gt;
+    &lt;input class=&quot;login&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;登录&quot;&gt;
+
+&lt;/form&gt;  </code></pre></div>
+
+</body>
+</html>
+
+<h5 id="login-php"><a href="#login-php" class="headerlink" title="login.php"></a>login.php</h5><?php
+
+$uname = base64_encode($_POST['username']);
+
+$upass = md5($_POST['password']);
+
+if ($uname && $upass){
+    $f = fopen('shadow.db','r');
+
+    while (!feof($f)){
+        $data = fgets($f);
+        $arr = explode('|',$data);
+
+        if(count($arr) !=4 ){
+            continue;
+        }
+
+        if ($arr[0] == $uname && $arr[1] == $upass){
+
+            $idd = base64_decode($arr[0]);
+            echo "<script>alert('登陆成功！将跳转到主页！');location.href='index.php?id={$idd}';";
+            break;
+        }
+
+    }
+    echo "<script>alert('用户名或者密码错误，请重新登录！');location.href='login.html';</script>";
+}
+?>
+
+<h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><h5 id="regist-html"><a href="#regist-html" class="headerlink" title="regist.html"></a>regist.html</h5><!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            height: 40px;
+            width: 250px;
+        }
+
+<pre><code>&lt;/style&gt;</code></pre></head>
+<body>
+<center>
+    <form action="reg_user.php" method="post" enctype= "multipart/form-data">
+        <p>用户名</p >
+        <input type="text" name="username"><br>
+        <p>密码</p >
+        <input type="text" name="passwd"><br>
+        <p>邮箱</p >
+        <input type="text" name="email"><br>
+        <p>头像</p >
+        <input type="text" name="photo"> <br>
+        <input type="submit" value="提交" >
+
+
+
+
+<pre><code>&lt;/form&gt;</code></pre></center>
+</body>
+</html>
+
+<h5 id="regist-php"><a href="#regist-php" class="headerlink" title="regist.php"></a>regist.php</h5><?php
+$uname = base64_encode($_POST['username']);
+$upass = md5($_POST['passwd']);
+$umail = base64_encode($_POST['email']);
+$img_url = base64_encode($_POST['photo']);
+
+if($upass && $uname&& $umail&& $img_url){
+
+    $date = base64_encode(time());
+    $data = "{$uname}|{$upass}|{$umail}|{$img_url}"."\n";
+        $f = fopen('shadow.db','a');
+    fwrite($f,$data);
+    fclose($f);
+    echo "<script>alert('注册成功！即将跳转到登录界面！');location.href='./login.html';</script>";
+
+}
+
+
+### 上传内容
+
+<?php
+$q = $_GET['id'];
+if($q == NULL){
+    echo "<script>alert('请登录！');location.href='login.html';</script>";
+}
+echo <<<EOF
+
+<html>
+<body>
+
+<!--<form action="jieshou.php" method="post">-->
+<!--    用户名:<input type="text" name="uname" id="uname" value="" /><br />-->
+<!--    密码:<input type="password" name="pwd" id="pwd" value="" /><br />-->
+<!--    <input type="submit" name="" id="" value="提交" />-->
+
+<form action="jieshou.php?id={$q}" method="post">
+    <p>热度:<br><br><input type="text" name="热度" id="redu" value="1"><br></p>
+    <p>标题:<br><br><input type="text" name="标题" id="biaoti" value=""><br></p>
+<!--    <p>作者:<br><br><input type="text" name="作者" id="zuozhe" value="{$q}"> <br></p> -->
+<!--    <p>发布时间:<br><br><input type="text" name="发布时间" id="fashijian" value=""><br></p>-->
+    <p>操作:<br><br><input type="text" name="操作" id="caozuo" value=""><br></p>
+    <p>请输入图片地址:</p>
+    <p><input type="text" name="tupian" id="图片" value=""></p>
+    <p>简介:<br><br><input type="text" name="简介" id="jianjie" value=""><br></p>
+    <input type="submit" value="点击上传">
+</form>
+
+<!---->
+<!--<form action="jieshou.php" method="POST" accept-charset="utf-8" enctype="multipart/form-data">-->
+<!--        　　<div class="lsUpfindBtn">上传图片 <input type="file" name="file" id="file" /> </div>-->
+<!--    <input type="submit" value="点击上传">-->
+<!--</form>-->
+</body>
+
+
+</html>
+EOF;
+
+
+### 展示新闻
+
+<?php
+$q = $_GET['id'];
+if($q == NULL){
+    echo "<script>alert('请登录！');location.href='login.html';</script>";
+}
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title><?php echo 'ICQ新闻部';?></title>
+</head>
+<body background="tupian/bg.jpg">
+<center><?php echo "ICQ新闻部";?></center>
+
+<style type="text/css">
+    table{
+        width:80%
+    }
+    th{
+        width: 300px;
+        text-align: center;
+        height: 50px;
+    }
+    td{
+        height: 30px;
+        width: 300px;
+        text-align: center;
+    }
+    img{
+       height:80px;
+    }
+</style>
+<hr>
+<table>
+    <tr>
+        <th><button><?php echo "热度✍"; ?></button></th>
+        <th><?php echo "标题"; ?></th>
+        <th><?php echo "作者"; ?></th>
+        <th><?php echo "发表时间"; ?></th>
+        <th><?php echo "操作"; ?></th>
+    </tr>
+    <?php
+    $f = fopen("news.db","r");
+    $i=0;
+
+<pre><code>$l=0;
+
+while(!feof($f)){
+    $hang = fgets($f);
+
+    $shuzu = explode(&quot;|&quot;,$hang);
+    //echo &quot;长度为：&quot;.strlen($shuzu[0]);
+    if(count($shuzu) !=7){
+        continue;
+    }
+
+    $redu = base64_decode($shuzu[0]);
+    $biaoti = base64_decode($shuzu[1]);
+    $zuozhe = base64_decode($shuzu[2]);
+    $fashijian = base64_decode($shuzu[3]);
+    $caozuo = base64_decode($shuzu[4]);
+    $tupian = base64_decode($shuzu[5]);
+    $jianjie = substr(base64_decode($shuzu[6]),&quot;0&quot;,&quot;400&quot;);
+    echo  &lt;&lt;&lt;EOF
+&lt;tr&gt;
+    &lt;td align=&quot;center&quot;&gt;$redu&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;$biaoti&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;$zuozhe&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;$fashijian&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;$caozuo&lt;/td&gt;
+&lt;/tr&gt;</code><p>EOF;<br>        if($i&lt;9){<br>            echo &lt;&lt;&lt;EOF<br>        <tr></tr></p>
+<pre><code>&lt;td&gt;&lt;a &gt;&lt;img src=&quot;{$tupian}&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td colspan=&quot;4&quot;&gt;$jianjie&lt;/tr&gt;</code></pre><p>EOF;<br>            $i++;<br>        }<br>    }<br>    ?&gt;</p>
+</table>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<center>版权所有  ICQ</center>
+<center>©2019 ICQ 意见反馈 京ICP证030173号  京公网安备11000002000001号 </center>
+
+</head></html>
+
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/08/11/作业/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>作业</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/08/08/素数/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>素数</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<button class="menu-trigger"></button>
+  <div class="menu">
+	<div class="menu-head">
+	   <span class="layer">
+	<div class="col">
+	  <div class="row for-pic">
+	   <div class="profile-pic">     
+	   <img src="/images/person_1.jpg" alt="Asif Mughal" /> 
+	         </div>
+	  </div>
+	         <div class="row for-name">
+	         <p>John Doe</p>
+	        <span class="tagline">Hello, World!</span>
+	          </div>
+	         </div> 
+	  </span>
+	</div>
+	<nav class="menu-container">
+	<ul class="menu-items">
+	<li><span class="item-icon"><i class="fa fa-home"></i></span> <a href="/">首页</a></li>
+  <li><span class="item-icon"><i class="fa fa-archive"></i></span> <a href="/archives/">归档</a></li> 
+	<li class="has-sub"> <span class="item-icon"> <i class="fa fa-bookmark"></i> </span>
+	<span class="dropdown-heading">页面</span><ul>
+   <li> <a href="/guestbook">留言</a></li><li> <a href="/about">关于</a></li>
+	  </ul>
+	 </li>
+    <li class="has-sub"> <span class="item-icon"> <i class="fa fa-link"></i> </span>
+	 <span class="dropdown-heading">友链</span><ul>
+   <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</nav>
+  </div>
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
