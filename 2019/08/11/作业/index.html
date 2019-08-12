@@ -142,6 +142,143 @@ if ($uname && $upass){
 
 <p>del.php:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">error_reporting(E_ALL^E_NOTICE);</span><br><span class="line">if(!isset($_SESSION[&apos;username&apos;]))&#123;    </span><br><span class="line">    echo &quot;&lt;script&gt;alert(&apos;请登录后查看！&apos;);location.href=&apos;login.php&apos;;&lt;/script&gt;&quot;;</span><br><span class="line"> &#125;</span><br><span class="line"> ?&gt;</span><br><span class="line"> &lt;?php</span><br><span class="line"> Require_once &apos;../basedir/header.php&apos;;</span><br><span class="line"> ?&gt;</span><br><span class="line"> &lt;html&gt;</span><br><span class="line"> &lt;div style=&quot;width:100%;text-align:center&quot;&gt;  </span><br><span class="line">     &lt;h1&gt;删除新闻&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">if(isset($_SESSION[&apos;username&apos;])) &#123;    </span><br><span class="line">   echo &lt;&lt;&lt;EOF  </span><br><span class="line">   &lt;table align=&quot;center&quot; width=&quot;600&quot;&gt;     </span><br><span class="line">       &lt;tr &gt;&lt;th id=&quot;sctx&quot;&gt;&lt;a href=&quot;shangchuantouxiang.php&quot;&gt;上传头像&lt;/a&gt;&lt;/th&gt;&lt;th id=&quot;xwjm&quot;&gt;&lt;a href=&quot;zengjiaxinwen.php&quot;&gt;增加新闻&lt;/th&gt;&lt;th id=&quot;scxw&quot;&gt;&lt;a href=&quot;index.php&quot;&gt;新闻界面&lt;/th&gt;&lt;th id=&quot;xgmm&quot;&gt;&lt;a href=&quot;xiugaimima.php&quot;&gt;修改密码&lt;/th&gt;&lt;/tr&gt;    </span><br><span class="line">   &lt;/table&gt;  </span><br><span class="line">   &lt;table align=&quot;center&quot; border=&quot;0&quot; width=&quot;1200&quot;&gt;</span><br><span class="line">EOF;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;?php$f = fopen(&apos;../data/xinwenwenjian/new.db&apos;,&apos;r&apos;);</span><br><span class="line">while (!feof($f)) &#123;     </span><br><span class="line">    $str = fgets($f);    </span><br><span class="line">    $shuzu = explode(&quot;|&quot;, $str);    </span><br><span class="line">    //echo &quot;长度为：&quot;.strlen($shuzu[0]);   </span><br><span class="line">    if (count($shuzu) != 6) &#123;       </span><br><span class="line">    continue;    </span><br><span class="line">    &#125;    </span><br><span class="line">    $shuzu = explode(&apos;|&apos;, $str);//按照|进行分割    </span><br><span class="line">    $biaoti = base64_decode($shuzu[1]);    </span><br><span class="line">    echo &lt;&lt;&lt;EOF       </span><br><span class="line">      &lt;tr&gt;            </span><br><span class="line">          &lt;th align=&quot;center&quot; &gt;&lt;h2&gt;标题：&#123;$biaoti&#125;&lt;/h2&gt;&lt;/th&gt;       </span><br><span class="line">       &lt;/tr&gt;        </span><br><span class="line">       &lt;tr&gt;            </span><br><span class="line">          &lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;shanchuxinwenhoutai.php?action&#123;$biaoti&#125;&quot;&gt;&lt;h4&gt;删除新闻&lt;/h4&gt;&lt;/a&gt;&lt;/td&gt;          </span><br><span class="line">       &lt;/tr&gt;       </span><br><span class="line">       &lt;br&gt;</span><br><span class="line">EOF;</span><br><span class="line">&#125;    </span><br><span class="line">?&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">Require_once &apos;../basedir/footer.php&apos;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="basedir-目录存放页面头部和尾部"><a href="#basedir-目录存放页面头部和尾部" class="headerlink" title="basedir   //目录存放页面头部和尾部"></a>basedir   //目录存放页面头部和尾部</h4><p>header.php:</p>
+<?php
+session_start();
+error_reporting(E_ALL^E_NOTICE);
+if(!$_SESSION['username']){
+
+    echo <<<EOF
+<html>
+
+<style>
+.logo{}
+
+</style>
+<body>
+<table border="0" width="100%" height="100px" style="table-layout: fixed">
+<tr>
+    <td>
+    <img src="../data/tupian/qaq.jpg" width="100px" ; height="100px" align="left">
+    </td>
+
+    <td align="center">
+    <h2 id="toubiao">{$dengluzhe}</h2>
+    </td>
+
+    <td align="right">
+    <a href="../lib/login.php"><button align="right">用户登录</button></a>
+    </td>
+</tr>
+</table>
+
+
+</body>
+EOF;
+}else {
+
+
+    $f = fopen('../data/yonghuxinxiwenjian/yh.db', 'r');
+
+    while (!feof($f)) {
+        $data = fgets($f);
+        $arr = explode('|', $data);
+
+        if (base64_decode($arr[0]) == $_SESSION['username']) {
+            $lujing = base64_decode(trim($arr[3]));
+            break;
+        }
+    }
+
+    $dengluzhe = $_SESSION['username'];
+
+    $f = fopen('../data/yonghuxinxiwenjian/yh.db','r');
+    while (!feof($f)){
+        $data = fgets($f);
+        $arr = explode('|',$data);
+//        echo base64_decode($arr[0]);
+
+//        echo base64_decode($arr[0]);
+        if (base64_decode($arr[0] )== $_SESSION['username'] ){
+
+            $lujing = $arr[3];
+            break;
+        }
+
+    }
+
+    $lujing = (base64_decode($lujing));
+    echo <<<eof <html>
+
+<style>
+.logo{}
+
+</style>
+<body>
+<table border="0" width="100%" height="100px" style="table-layout: fixed">
+<tr>
+    <td>
+    <img src="../data/tupian/qaq.jpg" width="100px" ; height="100px" align="left">
+    </td>
+
+    <td align="center">
+    <h2 id="toubiao">你好，{$dengluzhe} 欢迎登陆</h2>
+    </td>
+
+   <td align="right">
+<!--   <div style="float:right";>-->
+
+     <p><img src="$lujing" width="100px" ; height="100px">
+
+
+​    
+    <a href="yonghutuichu.php">  <button> 退出登录 </button></a>
+        </p>
+
+
+​    
+​    
+​    
+<!--    </div>-->
+​    </td>
+</tr>
+
+<!--  <div style="float:right;>-->
+<!--    <img src="../data/tupian/qaq.jpg"width="150px" ; height="150px"; align="right">-->
+<!--    <br>-->
+<!--    <button align="right">注销</button>-->
+<!--    </div>-->
+
+
+</table>
+
+
+</body>
+
+
+
+EOF;
+
+
+
+}
+?>
+
+<p>footer.php:</p>
+<?php
+
+echo <<<EOF
+
+<hr>
+
+<p></p><h1 align="center">Author:0xxk</h1><p></p>
+EOF;
+
+
+
+
+?></eof>
       </div>
     </div>		
   </div>
