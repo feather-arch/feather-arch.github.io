@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Linux基础命令 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css"> <link rel="stylesheet" href="/css/style.css"> <link rel="stylesheet" href="/css/menu.css"> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "moonlit",
+	     });
+	}); 
+	</script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+</head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><img src="/images/person_1.jpg"></div>
+    <span>2019-08-01</span>
+    <h2>Linux基础命令</h2>
+    </div>
+</div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <h2 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h2><h3 id="ls-列出目录"><a href="#ls-列出目录" class="headerlink" title="ls (列出目录)"></a>ls (列出目录)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-a ：全部的文件，连同隐藏档( 开头为 . 的文件) 一起列出来(常用)</span><br><span class="line">-d ：仅列出目录本身，而不是列出目录内的文件数据(常用)</span><br><span class="line">-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</span><br></pre></td></tr></table></figure>
+
+<h3 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd (切换目录)"></a>cd (切换目录)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd是用来切换工作目录的命令，切换的是相对路径或者绝对路径</span><br><span class="line">cd .. 表示去到当前目录的上一级目录</span><br><span class="line">cd ~  表示返回根目录，即/root</span><br></pre></td></tr></table></figure>
+
+<h3 id="pwd-显示目前所在的目录"><a href="#pwd-显示目前所在的目录" class="headerlink" title="pwd (显示目前所在的目录)"></a>pwd (显示目前所在的目录)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-P ：显示出确实的路径，而非使用连结 (link) 路径。</span><br></pre></td></tr></table></figure>
+
+<h3 id="mkdir-创建新目录"><a href="#mkdir-创建新目录" class="headerlink" title="mkdir (创建新目录)"></a>mkdir (创建新目录)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-m ：配置文件的权限喔！直接配置，不需要看默认权限 。</span><br><span class="line">-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</span><br></pre></td></tr></table></figure>
+
+<p>###touch (创建文件)<br>    - t ： 使用指定的日期时间，而非现在的时间</p>
+<h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir (删除空的目录)"></a>rmdir (删除空的目录)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-p ：连同上一级『空的』目录也一起删除</span><br></pre></td></tr></table></figure>
+
+<h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp (复制文件或目录)"></a>cp (复制文件或目录)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-f：为强制的意思，若目标文件已经存在且无法开启，则移除后再尝试一次；</span><br><span class="line">-i：若目标档已经存在时，在覆盖时会先询问动作的进行(常用)</span><br><span class="line">-p：连同文件的属性一起复制过去，而非使用默认属性(备份常用)</span><br><span class="line">r：递归持续复制，用于目录的复制；(常用)</span><br></pre></td></tr></table></figure>
+
+<h3 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm (移除文件或目录)"></a>rm (移除文件或目录)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-f ：就是强制的意思，忽略不存在的文件，不会出现警告信息；</span><br><span class="line">-i ：互动模式，在删除前会询问使用者是否动作</span><br><span class="line">-r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！</span><br></pre></td></tr></table></figure>
+
+<h3 id="more（一页一页翻动）"><a href="#more（一页一页翻动）" class="headerlink" title="more（一页一页翻动）"></a>more（一页一页翻动）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">空白键 (space)：代表向下翻一页；</span><br><span class="line">Enter         ：代表向下翻『一行』；</span><br><span class="line">q             ：代表立刻离开 more ，不再显示该文件内容</span><br></pre></td></tr></table></figure>
+
+<h3 id="less-（一页一页翻动，与more类似。区别是可以往回翻页）"><a href="#less-（一页一页翻动，与more类似。区别是可以往回翻页）" class="headerlink" title="less （一页一页翻动，与more类似。区别是可以往回翻页）"></a>less （一页一页翻动，与more类似。区别是可以往回翻页）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">空白键    ：向下翻动一页；</span><br><span class="line">n         ：重复前一个搜寻 (与 / 或 ? 有关！)</span><br><span class="line">N         ：反向的重复前一个搜寻 (与 / 或 ? 有关！)</span><br><span class="line">q         ：离开 less 这个程序；</span><br></pre></td></tr></table></figure>
+
+<h3 id="head（显示文件前几行）"><a href="#head（显示文件前几行）" class="headerlink" title="head（显示文件前几行）"></a>head（显示文件前几行）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-n : 后面接数字，代表显示几行</span><br></pre></td></tr></table></figure>
+
+<h3 id="tail-（显示文件后几行）"><a href="#tail-（显示文件后几行）" class="headerlink" title="tail （显示文件后几行）"></a>tail （显示文件后几行）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-n :后面接数字，代表显示几行。</span><br></pre></td></tr></table></figure>
+
+<h3 id="grep-用于搜索特定字符"><a href="#grep-用于搜索特定字符" class="headerlink" title="grep (用于搜索特定字符)"></a>grep (用于搜索特定字符)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用法：grep [参数] [文件]</span><br></pre></td></tr></table></figure>
+
+<h3 id="find-用于查找特定文件）"><a href="#find-用于查找特定文件）" class="headerlink" title="find (用于查找特定文件）"></a>find (用于查找特定文件）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用法：find [参数] [文件] </span><br><span class="line">-name :查找具有指定文件名的文件</span><br><span class="line">-perm :查找具有指定权限的文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="tar-（用于压缩和解压缩文件）"><a href="#tar-（用于压缩和解压缩文件）" class="headerlink" title="tar （用于压缩和解压缩文件）"></a>tar （用于压缩和解压缩文件）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">用法：tar [参数] [文件]</span><br><span class="line">-c :建立新的压缩文件</span><br><span class="line">-x ：从压缩文件中提取文件</span><br><span class="line">-z :支持gzip解压文件</span><br><span class="line">-v ：显示操作过程</span><br><span class="line">-f ：指定压缩文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="whereis-（定位可执行文件、源代码文件、帮助文件在系统中的位置）"><a href="#whereis-（定位可执行文件、源代码文件、帮助文件在系统中的位置）" class="headerlink" title="whereis （定位可执行文件、源代码文件、帮助文件在系统中的位置）"></a>whereis （定位可执行文件、源代码文件、帮助文件在系统中的位置）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用法：whereis [参数][文件或目录]</span><br><span class="line">-b  定位可执行文件</span><br><span class="line">-s  定位源代码文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="which-搜索path变量中某个系统命令的位置"><a href="#which-搜索path变量中某个系统命令的位置" class="headerlink" title="which (搜索path变量中某个系统命令的位置)"></a>which (搜索path变量中某个系统命令的位置)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用法：which [可执行文件名称]</span><br></pre></td></tr></table></figure>
+
+<h3 id="ping-（查看网络上另一个主机系统的网络连接是否正常）"><a href="#ping-（查看网络上另一个主机系统的网络连接是否正常）" class="headerlink" title="ping （查看网络上另一个主机系统的网络连接是否正常）"></a>ping （查看网络上另一个主机系统的网络连接是否正常）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用法：ping [参数][主机名或ip地址]</span><br><span class="line">-c 在发送指定数量的包后停止</span><br></pre></td></tr></table></figure>
+
+<h3 id="ifconfig-查看和配置网络设备"><a href="#ifconfig-查看和配置网络设备" class="headerlink" title="ifconfig (查看和配置网络设备)"></a>ifconfig (查看和配置网络设备)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用法：ifconfig [网络设备][参数]</span><br><span class="line">-up 启动指定网络设备/网卡</span><br><span class="line">-down 关闭指定网络设备/网卡</span><br><span class="line">-a  显示全部接口信息</span><br></pre></td></tr></table></figure>
+
+<h3 id="ps-（显示当前进程状态）"><a href="#ps-（显示当前进程状态）" class="headerlink" title="ps （显示当前进程状态）"></a>ps （显示当前进程状态）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">用法：ps [参数]	</span><br><span class="line">-aux  列出目前所有正在内存中的程序</span><br><span class="line">-ef   显示所有信息，连同命令行</span><br></pre></td></tr></table></figure>
+
+<h3 id="chown-改变文件的拥有着和群组"><a href="#chown-改变文件的拥有着和群组" class="headerlink" title="chown (改变文件的拥有着和群组)"></a>chown (改变文件的拥有着和群组)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用法：chown [选项][所有者]</span><br><span class="line">-R 处理指定目录以及其目录下的所有文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="chmod-用于改变文件或目录的访问权限"><a href="#chmod-用于改变文件或目录的访问权限" class="headerlink" title="chmod (用于改变文件或目录的访问权限)"></a>chmod (用于改变文件或目录的访问权限)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">用法：chmod [选项][文件]</span><br><span class="line">-R 处理指定目录以及其子目录下的所有文件</span><br><span class="line">u：目录或者文件的所属的用户</span><br><span class="line">g:目录或者文件的当前的群组</span><br><span class="line">o:除了目录或者文件的当前用户或者群组之外的用户或者群组</span><br><span class="line">a：所有的用户及群组</span><br></pre></td></tr></table></figure>
+
+
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/08/04/Linux用户与组管理/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>Linux用户与组管理</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/07/24/hello-world/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>Hello World</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<button class="menu-trigger"></button>
+  <div class="menu">
+	<div class="menu-head">
+	   <span class="layer">
+	<div class="col">
+	  <div class="row for-pic">
+	   <div class="profile-pic">     
+	   <img src="/images/person_1.jpg" alt="Asif Mughal"> 
+	         </div>
+	  </div>
+	         <div class="row for-name">
+	         <p>John Doe</p>
+	        <span class="tagline">Hello, World!</span>
+	          </div>
+	         </div> 
+	  </span>
+	</div>
+	<nav class="menu-container">
+	<ul class="menu-items">
+	<li><span class="item-icon"><i class="fa fa-home"></i></span> <a href="/">首页</a></li>
+  <li><span class="item-icon"><i class="fa fa-archive"></i></span> <a href="/archives/">归档</a></li> 
+	<li class="has-sub"> <span class="item-icon"> <i class="fa fa-bookmark"></i> </span>
+	<span class="dropdown-heading">页面</span><ul>
+   <li> <a href="/guestbook">留言</a></li><li> <a href="/about">关于</a></li>
+	  </ul>
+	 </li>
+    <li class="has-sub"> <span class="item-icon"> <i class="fa fa-link"></i> </span>
+	 <span class="dropdown-heading">友链</span><ul>
+   <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</nav>
+  </div>
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

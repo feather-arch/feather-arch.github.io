@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Hexo</title>
+  <title>DVWA的安装过程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="John Doe">
   <meta name="keywords" content>
@@ -33,7 +33,7 @@
   <div class="page-title">
     <div class="avatar"><img src="/images/person_1.jpg"></div>
     <span>2019-08-05</span>
-    <h2></h2>
+    <h2>DVWA的安装过程</h2>
     </div>
 </div>
 </div>
@@ -42,16 +42,17 @@
     <div class="lx-entry padding">
       <div>
         <h3 id="进入到-var-www目录下，然后wget下载dvwa文件。"><a href="#进入到-var-www目录下，然后wget下载dvwa文件。" class="headerlink" title="进入到/var/www目录下，然后wget下载dvwa文件。"></a>进入到/var/www目录下，然后wget下载dvwa文件。</h3><p>   cd /var/www<br>   wget <a href="https://github.com/ethicalhack3r/DVWA/archive/master.zip" target="_blank" rel="noopener">https://github.com/ethicalhack3r/DVWA/archive/master.zip</a></p>
-<h3 id="解压master-zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa"><a href="#解压master-zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa" class="headerlink" title="解压master.zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa."></a>解压master.zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa.</h3><p>   unzip master.zip -d html/<br>   cd html &amp;&amp; mv DVWA-master dvwa</p>
-<h3 id="进入dvwa-config文件夹中，把config-inc-php-dist复制一份，命名为config-inc-php"><a href="#进入dvwa-config文件夹中，把config-inc-php-dist复制一份，命名为config-inc-php" class="headerlink" title="进入dvwa/config文件夹中，把config.inc.php.dist复制一份，命名为config.inc.php"></a>进入dvwa/config文件夹中，把config.inc.php.dist复制一份，命名为config.inc.php</h3><pre><code>cd config/
-cp config.inc.php.dist config.inc.php</code></pre><p>###在浏览器中输入自己的ip /dvwa,查看DVWA</p>
-<p>###进入到/etc文件夹下，把php.ini备份一份为php.ini.bak<br>   cd /etc<br>   cp php.ini php.ini.bak</p>
-<p>###打开php.ini，把allow_url_include=Off修改为On，保存退出，重启服务<br>    vi php.ini（allow_url_include=Off修改为On）<br>    systemctl restart httpd</p>
-<p>###进入/var/www/html/dvwa/config文件夹下，修改config.inc.php<br>    cd  /var/www/html/dvwa/config</p>
-<p>###修改config.inc.php,把$_DVWA[ ‘db_password ’ ] = ‘p@ssw0rd’修改为mysql中root用户的密码，填写公钥和私钥。<br>    vi  config.inc.php<br>    public_key: 6LePqhAUAAAAAH6Bn2okO9-8G-zNw46PNhotV4Q6<br>    private_key: 6LePqhAUAAAAAMVqhBbFr1NVA9H13FkyfAgBeZYx</p>
-<p>###保存退出</p>
-<p>###进入/var/www/html文件中修改dvwa的用户和用户组<br>   cd /var/www/html<br>   chown -R apache:apache dvwa/</p>
-<p>###重启服务<br>   systemctl restart httpd</p>
+<h4 id="解压master-zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa"><a href="#解压master-zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa" class="headerlink" title="解压master.zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa."></a>解压master.zip文件到html文件夹下，进入html文件夹下，修改DVWA-master文件名为dvwa.</h4><p>   unzip master.zip -d html/<br>   cd html &amp;&amp; mv DVWA-master dvwa</p>
+<p>进入dvwa/config文件夹中，把config.inc.php.dist复制一份，命名为config.inc.php</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd config/</span><br><span class="line">cp config.inc.php.dist config.inc.php</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中输入自己的ip /dvwa,查看DVWA</p>
+<h4 id="进入到-etc文件夹下，把php-ini备份一份为php-ini-bak"><a href="#进入到-etc文件夹下，把php-ini备份一份为php-ini-bak" class="headerlink" title="进入到/etc文件夹下，把php.ini备份一份为php.ini.bak"></a>进入到/etc文件夹下，把php.ini备份一份为php.ini.bak</h4><p>   cd /etc<br>   cp php.ini php.ini.bak</p>
+<h4 id="打开php-ini，把allow-url-include-Off修改为On，保存退出，重启服务"><a href="#打开php-ini，把allow-url-include-Off修改为On，保存退出，重启服务" class="headerlink" title="打开php.ini，把allow_url_include=Off修改为On，保存退出，重启服务"></a>打开php.ini，把allow_url_include=Off修改为On，保存退出，重启服务</h4><p>​    vi php.ini（allow_url_include=Off修改为On）<br>​    systemctl restart httpd</p>
+<h4 id="进入-var-www-html-dvwa-config文件夹下，修改config-inc-php"><a href="#进入-var-www-html-dvwa-config文件夹下，修改config-inc-php" class="headerlink" title="进入/var/www/html/dvwa/config文件夹下，修改config.inc.php"></a>进入/var/www/html/dvwa/config文件夹下，修改config.inc.php</h4><p>​    cd  /var/www/html/dvwa/config</p>
+<h4 id="修改config-inc-php-把-DVWA-‘db-password-’-‘p-ssw0rd’修改为mysql中root用户的密码，填写公钥和私钥。"><a href="#修改config-inc-php-把-DVWA-‘db-password-’-‘p-ssw0rd’修改为mysql中root用户的密码，填写公钥和私钥。" class="headerlink" title="修改config.inc.php,把$_DVWA[ ‘db_password ’ ] = ‘p@ssw0rd’修改为mysql中root用户的密码，填写公钥和私钥。"></a>修改config.inc.php,把$_DVWA[ ‘db_password ’ ] = ‘p@ssw0rd’修改为mysql中root用户的密码，填写公钥和私钥。</h4><p>​    vi  config.inc.php<br>​    public_key: 6LePqhAUAAAAAH6Bn2okO9-8G-zNw46PNhotV4Q6<br>​    private_key: 6LePqhAUAAAAAMVqhBbFr1NVA9H13FkyfAgBeZYx</p>
+<h4 id="保存退出"><a href="#保存退出" class="headerlink" title="保存退出"></a>保存退出</h4><h4 id="进入-var-www-html文件中修改dvwa的用户和用户组"><a href="#进入-var-www-html文件中修改dvwa的用户和用户组" class="headerlink" title="进入/var/www/html文件中修改dvwa的用户和用户组"></a>进入/var/www/html文件中修改dvwa的用户和用户组</h4><p>   cd /var/www/html<br>   chown -R apache:apache dvwa/</p>
+<h4 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h4><p>   systemctl restart httpd</p>
 
       </div>
     </div>		
@@ -60,12 +61,12 @@ cp config.inc.php.dist config.inc.php</code></pre><p>###在浏览器中输入自
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2019/08/05/Linux三种安装方式/">
+		<a class="copy" href="/2019/08/05/搭建LAMP/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3></h3>
+						<h3>搭建LAMP</h3>
 					</div>
 				</div>
 			</div>
@@ -73,12 +74,12 @@ cp config.inc.php.dist config.inc.php</code></pre><p>###在浏览器中输入自
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2019/08/04/搭建lamp/">
+		<a class="copy" href="/2019/08/05/Linux的三种安装软件方式/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3></h3>
+						<h3>Linux的三种安装软件的方式</h3>
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>文件上传漏洞 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css"> <link rel="stylesheet" href="/css/style.css"> <link rel="stylesheet" href="/css/menu.css"> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "moonlit",
+	     });
+	}); 
+	</script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+</head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><img src="/images/person_1.jpg"></div>
+    <span>2019-09-20</span>
+    <h2>文件上传漏洞</h2>
+    </div>
+</div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <h3 id="文件上传测试"><a href="#文件上传测试" class="headerlink" title="文件上传测试"></a>文件上传测试</h3><p>1、测试是否前端检测<br> 使用浏览器F12工具查看上传时是否有流量，如果没有使用burpsuite或者禁用js绕过。绕过成功则是前端测试，绕过失败则不考虑前端测试。<br> 如果有流量说明是后端检测。</p>
+<p>2、测试是否MIME类型检测。</p>
+<p>修改类型为image/jpeg，上传成功则是mime类型检测，上传失败就判断是不是内容检测。<br> 有些网站识别文件类型是依靠mime，文件名字是jpg，但是修改文件类型为application/php，可以直接保存为Php</p>
+<p>3、测试是否内容检测<br> 一些网站，支持上传zip文件，上传后会直接解压，可以在压缩包中放入webshell。<br> 制作图片马，上传成功说明不进行内容检测，上传失败就需要判断是黑名单检测还是白名单检测。</p>
+<p>4、测试是白名单还是黑名单检测</p>
+<p>上传一个图片马，</p>
+<p>上传成功则是黑名单检测。:<br> 上传 .htaccess  利用apache特性，让目录下的任意文件解析为php程序。新文件的名字必须是上传的文件名字。</p>
+<p>上传a.php2、php3、php4、php5、phtml，均可绕过验证。</p>
+<p>上传 a.php::$DATA.jpg  windows特性.jpg会被截断，最后剩下a.php</p>
+<p>上传a.php.  windows特性， 空格不会保存，最后剩下a.php。</p>
+<p>上传a.pHp,windows系统特性，不区分大小写，最后能够访问到a.php。</p>
+<p>截断上传： php5.3.4以下，%00可以截断后缀，/upload/a.php%00a.jpg  最后会保存为/upload/a.php文件</p>
+<p>新文件名字中带有上传文件名—&gt;apach解析’a.php.qwer‘</p>
+<p>—&gt;iis/nignx/lighttpd+php解析’a.jpg/.php’</p>
+<p>—-&gt;iis6解析‘a.php:.jpg</p>
+<p>上传失败则是白名单检测：</p>
+<p>新文件中带有上传文件名：windows系统使用’a.php::$data.jpg绕过</p>
+<p>是否有00截断</p>
+<p>解析漏洞：iis6解析‘a.php, .jpg</p>
+<p>iis/nginx/lighttpd+php解析‘a.jpg/.php’</p>
+<p>新文件名字中不带有上传文件名：<br> 能否结合文件包含漏洞</p>
+<p>是否有00截断</p>
+<p>iis/nginx/lighttpd+php解析’a.jpg/.php</p>
+<p>JS验证本地上传</p>
+<p>js验证用于客户端的本地验证。如果你上传一个不正确的文件格式，它会很快判断显示出来你上传的文件类型不正确。</p>
+<h4 id="绕过js检测，上传webshell。"><a href="#绕过js检测，上传webshell。" class="headerlink" title="绕过js检测，上传webshell。"></a>绕过js检测，上传webshell。</h4><p> 1、删除onsubmit事件：onsubmit=”return checkFile()”</p>
+<p>2、在定义 允许文件上传类型中添加.php文件类型。</p>
+<p>3、复制源代码，在本地分析。尝试删除iava script代码，指定在action=””中指定上传地址。</p>
+<p>4、将木马文件的后缀改为正常图片的后缀，使用burpsuite拦截上传数据，将其中的jpg改为php后缀，下发，即可绕过客户端检测。</p>
+<h4 id="MIME验证检测"><a href="#MIME验证检测" class="headerlink" title="MIME验证检测"></a>MIME验证检测</h4><p>MIME验证：多用途互联网邮件扩展类型。是设定某种扩展名文件用一种应用程序来打开的方式类型，当该扩展名文件被访问时，浏览器会自动使用指定的应用程序打开。多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。</p>
+<p>使用burpsuite抓包，修改Content为image/jpeg，</p>
+
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/09/17/upload-labs1-13关/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3></h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<button class="menu-trigger"></button>
+  <div class="menu">
+	<div class="menu-head">
+	   <span class="layer">
+	<div class="col">
+	  <div class="row for-pic">
+	   <div class="profile-pic">     
+	   <img src="/images/person_1.jpg" alt="Asif Mughal"> 
+	         </div>
+	  </div>
+	         <div class="row for-name">
+	         <p>John Doe</p>
+	        <span class="tagline">Hello, World!</span>
+	          </div>
+	         </div> 
+	  </span>
+	</div>
+	<nav class="menu-container">
+	<ul class="menu-items">
+	<li><span class="item-icon"><i class="fa fa-home"></i></span> <a href="/">首页</a></li>
+  <li><span class="item-icon"><i class="fa fa-archive"></i></span> <a href="/archives/">归档</a></li> 
+	<li class="has-sub"> <span class="item-icon"> <i class="fa fa-bookmark"></i> </span>
+	<span class="dropdown-heading">页面</span><ul>
+   <li> <a href="/guestbook">留言</a></li><li> <a href="/about">关于</a></li>
+	  </ul>
+	 </li>
+    <li class="has-sub"> <span class="item-icon"> <i class="fa fa-link"></i> </span>
+	 <span class="dropdown-heading">友链</span><ul>
+   <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</nav>
+  </div>
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
