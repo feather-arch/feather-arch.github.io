@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>upload-loads1-13关 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content>
+  <meta name="description" content>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css"> <link rel="stylesheet" href="/css/style.css"> <link rel="stylesheet" href="/css/menu.css"> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "moonlit",
+	     });
+	}); 
+	</script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+</head>
+<body>
+<div class="single">
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/page-cover.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><img src="/images/person_1.jpg"></div>
+    <span>2019-09-23</span>
+    <h2>upload-loads1-13关</h2>
+    </div>
+</div>
+</div>
+<div id="lx-main-content">
+  <div class="lx-post"> 
+    <div class="lx-entry padding">
+      <div>
+        <p>title: upload-labs3-13关<br>date: 2019-09-14 08:55:44<br>tags:</p>
+<h2 id="upload-labs3-13关"><a href="#upload-labs3-13关" class="headerlink" title="upload-labs3-13关"></a>upload-labs3-13关</h2><h4 id="第三关："><a href="#第三关：" class="headerlink" title="第三关："></a>第三关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLa3aF.jpg" alt="uLa3aF.jpg" border="0">
+由此可知本关禁止上传.asp|.aspx|.php|.jsp后缀文件！
+
+<img src="https://s2.ax1x.com/2019/10/12/uLazoF.png" alt="uLazoF.png" border="0">
+判断是黑名单检测。
+并且过滤点、大小写和字符串：：$DATA、空格。
+
+<p>更改php木马后缀为.php4，上传。</p>
+<img src="https://s2.ax1x.com/2019/10/12/uLd461.png" alt="uLd461.png" border="0">
+
+<p>上传成功。</p>
+<h4 id="第四关："><a href="#第四关：" class="headerlink" title="第四关："></a>第四关：</h4><img src="https://s2.ax1x.com/2019/10/12/uL0LQA.png" alt="uL0LQA.png" border="0">
+
+<img src="https://s2.ax1x.com/2019/10/12/uLDnBt.png" alt="uLDnBt.png" border="0">
+
+<p>也是黑名单检测，可以上传.htaccess后缀文件。<br>文件内容为<br>SetHandler application/x-httpd-php<br>。<br>addtype application/x-httpd-php.abc(文件后缀为abc的解析为php)</p>
+<p>&lt;FilesMatch “abc”&gt;</p>
+<p>SetHandler application/x-httpd-php</p>
+<p>    (文件包含abc的都被解析为php文件)</p>
+<p>上传.htaccess后缀木马文件。</p>
+<img src="https://s2.ax1x.com/2019/10/12/uLDwNT.png" alt="uLDwNT.png" border="0">
+
+<p>成功上传。</p>
+<img src="https://s2.ax1x.com/2019/10/12/uLqBcj.png" alt="uLqBcj.png" border="0">
+
+<h4 id="第五关："><a href="#第五关：" class="headerlink" title="第五关："></a>第五关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLqfCF.png" alt="uLqfCF.png" border="0">
+连.htaccess都禁止了。
+<img src="https://s2.ax1x.com/2019/10/12/uLq5v9.png" alt="uLq5v9.png" border="0">
+查看源码发现没有对后缀进行大小写统一，尝试大小写绕过。
+将木马文件后缀改为.phP,将木马文件后缀改为.phP,s上传成功。
+
+<img src="https://s2.ax1x.com/2019/10/12/uLqXCD.png" alt="uLqXCD.png" border="0">
+
+<p>并且可以成功显示。</p>
+<h4 id="第六关："><a href="#第六关：" class="headerlink" title="第六关："></a>第六关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLLiUf.png" alt="uLLiUf.png" border="0">
+通过查看源码发现本关没有过滤空格。可以尝试加上空格。使用burpsuite抓包，并在php后加空格，下发数据包。文件成功上传，并且通过查看源码发现本关没有过滤空格。可以尝试加上空格。使用burpsuite抓包，并在php后加空格，下发数据包。文件成功上传.
+
+<h4 id="第七关："><a href="#第七关：" class="headerlink" title="第七关："></a>第七关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLL3PU.png" alt="uLL3PU.png" border="0">
+发现没有过滤.，可以尝试后缀中添加.绕过验证。同样使用burpsuite抓包，在文件后加.。文件成功上传。
+
+<h4 id="第八关："><a href="#第八关：" class="headerlink" title="第八关："></a>第八关：</h4><p><img src="https://s2.ax1x.com/2019/10/12/uLLrGD.png" alt="uLLrGD.png" border="0">没有过滤：：$DATA，尝试：：$data绕过验证。<br>同样使用burpsuite抓包改包。</p>
+<h4 id="第九关："><a href="#第九关：" class="headerlink" title="第九关："></a>第九关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLOpz4.png" alt="uLOpz4.png" border="0">
+<img src="https://s2.ax1x.com/2019/10/12/uLOKQH.png" alt="uLOKQH.png" border="0">
+同样也是黑名单。
+路径拼接的是处理后的文件名，于是构造a.php. . （点+空格+点），经过处理后，文件名变成a.php.，即可绕过。
+
+<h4 id="第十关："><a href="#第十关：" class="headerlink" title="第十关："></a>第十关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLXGu9.png" alt="uLXGu9.png" border="0">
+同样为黑名单过滤。但是没有任何限制，直接上传php文件可以上传成功，但是读不出木马文件，因为图片后缀名字没有了。
+可以将名字改为.pphphp绕过检测。即可可以将名字改为.pphphp绕过检测。即可。
+原因是后缀名被替换为空。
+
+<h4 id="第十一关："><a href="#第十一关：" class="headerlink" title="第十一关："></a>第十一关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLX7bn.png" alt="uLX7bn.png" border="0">
+白名单检测，仅允许上传jpg、png、gif文件。
+并且$img_path直接拼接，所以可以用截断绕过。
+get传输save_path是可控的。
+
+<img src="https://s2.ax1x.com/2019/10/12/uLjMVI.png" alt="uLjMVI.png" border="0">
+
+<h4 id="第十二关："><a href="#第十二关：" class="headerlink" title="第十二关："></a>第十二关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLjWZR.png" alt="uLjWZR.png" border="0">
+
+<p>post传输save_path</p>
+<img src="https://s2.ax1x.com/2019/10/12/uLjTzD.png" alt="uLjTzD.png" border="0">
+
+<p>将%00进行URL编码，然后下发数据包。<br><img src="https://s2.ax1x.com/2019/10/12/uLjxFP.png" alt="uLjxFP.png" border="0"></p>
+<h4 id="第十三关："><a href="#第十三关：" class="headerlink" title="第十三关："></a>第十三关：</h4><img src="https://s2.ax1x.com/2019/10/12/uLvPyQ.png" alt="uLvPyQ.png" border="0">
+只读前两个字节，所以可以直接上传图片马。
+
+<img src="https://s2.ax1x.com/2019/10/12/uLveYV.png" alt="uLveYV.png" border="0">
+
+<p>上传成功。</p>
+<img src="https://s2.ax1x.com/2019/10/12/uLv1m9.png" alt="uLv1m9.png" border="0">
+
+
+      </div>
+    </div>		
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(/images/footer_1.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/10/23/phpmyadmin-getshell的方法/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>phpmyadmin,getshell的方法</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(/images/footer_2.jpg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2019/09/20/文件上传漏洞/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>文件上传漏洞</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">Hexo</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.blleng.cn" target="_blank">Lx</a><br>
+  </div>
+</footer>
+</div>
+<button class="menu-trigger"></button>
+  <div class="menu">
+	<div class="menu-head">
+	   <span class="layer">
+	<div class="col">
+	  <div class="row for-pic">
+	   <div class="profile-pic">     
+	   <img src="/images/person_1.jpg" alt="Asif Mughal"> 
+	         </div>
+	  </div>
+	         <div class="row for-name">
+	         <p>John Doe</p>
+	        <span class="tagline">Hello, World!</span>
+	          </div>
+	         </div> 
+	  </span>
+	</div>
+	<nav class="menu-container">
+	<ul class="menu-items">
+	<li><span class="item-icon"><i class="fa fa-home"></i></span> <a href="/">首页</a></li>
+  <li><span class="item-icon"><i class="fa fa-archive"></i></span> <a href="/archives/">归档</a></li> 
+	<li class="has-sub"> <span class="item-icon"> <i class="fa fa-bookmark"></i> </span>
+	<span class="dropdown-heading">页面</span><ul>
+   <li> <a href="/guestbook">留言</a></li><li> <a href="/about">关于</a></li>
+	  </ul>
+	 </li>
+    <li class="has-sub"> <span class="item-icon"> <i class="fa fa-link"></i> </span>
+	 <span class="dropdown-heading">友链</span><ul>
+   <li> <a href="https://lx.blleng.cn" target="_blank">Theme-Lx</a></li>
+	  </ul>
+	 </li>
+	</ul>
+	</nav>
+  </div>
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.stellar.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
