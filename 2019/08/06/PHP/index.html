@@ -28,6 +28,7 @@ PHP标 签：​     1）   &amp;lt;%​ ">
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
 </head>
 
 
@@ -457,9 +458,9 @@ PHP标 签：​     1）   &amp;lt;%​ ">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="什么是PHP"><a href="#什么是PHP" class="headerlink" title="什么是PHP"></a>什么是PHP</h3><p>​    PHP是嵌入html页面的脚本语言<br>   目前最流行的网站开发语言<br>   几乎所有平台都可运行<br>   很多企业都使用PHP作为开发语言</p>
-<h3 id="PHP-格式"><a href="#PHP-格式" class="headerlink" title="PHP 格式"></a>PHP 格式</h3><p>   php脚本以<?php开始，以?>结束。</p>
+<h3 id="PHP-格式"><a href="#PHP-格式" class="headerlink" title="PHP 格式"></a>PHP 格式</h3><p>   php脚本以<!--?php开始，以?-->结束。</p>
 <h3 id="PHP标-签："><a href="#PHP标-签：" class="headerlink" title="PHP标 签："></a>PHP标 签：</h3><p>​     1）   &lt;%<br>​         %&gt;</p>
-<pre><code>2）&lt;script language=&quot;php/text&quot;&gt;
+<pre><code>2）&lt;script language="php/text"&gt;
  &lt;/script&gt;</code></pre><p>   php脚本可以单独存在，也可以与html结合</p>
 <h3 id="PHP扩展名"><a href="#PHP扩展名" class="headerlink" title="PHP扩展名"></a>PHP扩展名</h3><p>  php 文件扩展名规范，一般以.php结尾，但是可以使用其他命名，例如.phtml等。</p>
 <h3 id="PHP-后缀"><a href="#PHP-后缀" class="headerlink" title="PHP 后缀"></a>PHP 后缀</h3><p>  cgi模式<br>  module模式</p>
@@ -493,7 +494,25 @@ PHP标 签：​     1）   &amp;lt;%​ ">
 <p>​                        x  &amp;&amp;  y    与     </p>
 <p>​                        x  ||   y   或</p>
 <p>​                         ! x    非</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -956,13 +975,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://feather-arch.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:unreal_plume@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -972,7 +991,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3291414878" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3291414878" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

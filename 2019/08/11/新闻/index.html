@@ -16,11 +16,12 @@
 
 
 
-&amp;lt;div class=&amp;quot;top&amp;quot;&amp;gt;
+
+&amp;lt;div class=&#34;top&#34;&amp;gt;
     &amp;lt;h1&amp;gt;登录&amp;lt;/h1&amp;gt;
 &amp;lt;/div&amp;gt;
 
-&amp;lt">
+&amp;lt;form act">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -41,6 +42,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
 </head>
 
 
@@ -469,40 +471,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="登录页面"><a href="#登录页面" class="headerlink" title="登录页面"></a>登录页面</h3><h5 id="login-html"><a href="#login-html" class="headerlink" title="login.html"></a>login.html</h5><!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
+                <h3 id="登录页面"><a href="#登录页面" class="headerlink" title="登录页面"></a>登录页面</h3><h5 id="login-html"><a href="#login-html" class="headerlink" title="login.html"></a>login.html</h5>
+
+<meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <title>登录页面</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
-</head>
-<body>
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
+
+
 
 <div class="box">
 
-<pre><code>&lt;div class=&quot;top&quot;&gt;
+<pre><code>&lt;div class="top"&gt;
     &lt;h1&gt;登录&lt;/h1&gt;
 &lt;/div&gt;
 
-&lt;form action=&quot;login.php&quot; method=&quot;post&quot;&gt;
+&lt;form action="login.php" method="post"&gt;
 
-    &lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;手机号/邮箱/用户名&quot;&gt;
+    &lt;input type="text" name="username" placeholder="手机号/邮箱/用户名"&gt;
     &lt;br&gt;
-    &lt;input type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;密码&quot;&gt;
+    &lt;input type="password" name="password" placeholder="密码"&gt;
     &lt;br&gt;
-    &lt;input class=&quot;input_code&quot; type=&quot;text&quot; name=&quot;verifycode&quot; placeholder=&quot;验证码&quot;&gt;
-    &lt;img class=&quot;verifycode&quot; src=&quot;https://passport.360.cn/captcha.php?m=create&amp;app=i360&amp;scene=login&amp;userip=&amp;level=default&amp;sign=8820a4&amp;r=1564540365&amp;border=none&amp;_=1564540365972&quot;&gt;
+    &lt;input class="input_code" type="text" name="verifycode" placeholder="验证码"&gt;
+    &lt;img class="verifycode" src="https://passport.360.cn/captcha.php?m=create&amp;app=i360&amp;scene=login&amp;userip=&amp;level=default&amp;sign=8820a4&amp;r=1564540365&amp;border=none&amp;_=1564540365972"&gt;
     &lt;br&gt;
-    &lt;a class=&quot;getpass&quot; href=&quot;./reg.html&quot;&gt;注册账号&lt;/a&gt;
+    &lt;a class="getpass" href="./reg.html"&gt;注册账号&lt;/a&gt;
     &lt;br&gt;
-    &lt;input class=&quot;login&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;登录&quot;&gt;
+    &lt;input class="login" type="submit" name="submit" value="登录"&gt;
 
 &lt;/form&gt;  </code></pre></div>
 
-</body>
-</html>
 
-<h5 id="login-php"><a href="#login-php" class="headerlink" title="login.php"></a>login.php</h5><?php
+
+
+<h5 id="login-php"><a href="#login-php" class="headerlink" title="login.php"></a>login.php</h5><!--?php
 
 $uname = base64_encode($_POST['username']);
 
@@ -522,18 +525,18 @@ if ($uname && $upass){
         if ($arr[0] == $uname && $arr[1] == $upass){
 
             $idd = base64_decode($arr[0]);
-            echo "<script>alert('登陆成功！将跳转到主页！');location.href='index.php?id={$idd}';";
+            echo "<script-->alert('登陆成功！将跳转到主页！');location.href='index.php?id={$idd}';";
             break;
         }
 
     }
     echo "<script>alert('用户名或者密码错误，请重新登录！');location.href='login.html';</script>";
 }
-?>
+?&gt;
 
-<h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><h5 id="regist-html"><a href="#regist-html" class="headerlink" title="regist.html"></a>regist.html</h5><!DOCTYPE html>
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.9.0">
+<h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><h5 id="regist-html"><a href="#regist-html" class="headerlink" title="regist.html"></a>regist.html</h5>
+
+<meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
@@ -659,25 +662,13 @@ if($q == NULL){
     }
 </style>
 <hr>
-<table>
-    <tr>
-        <th><button><?php echo "热度✍"; ?></button></th>
-        <th><?php echo "标题"; ?></th>
-        <th><?php echo "作者"; ?></th>
-        <th><?php echo "发表时间"; ?></th>
-        <th><?php echo "操作"; ?></th>
-    </tr>
-    <?php
-    $f = fopen("news.db","r");
-    $i=0;
-
-<pre><code>$l=0;
+<code>$l=0;
 
 while(!feof($f)){
     $hang = fgets($f);
 
-    $shuzu = explode(&quot;|&quot;,$hang);
-    //echo &quot;长度为：&quot;.strlen($shuzu[0]);
+    $shuzu = explode("|",$hang);
+    //echo "长度为：".strlen($shuzu[0]);
     if(count($shuzu) !=7){
         continue;
     }
@@ -688,24 +679,54 @@ while(!feof($f)){
     $fashijian = base64_decode($shuzu[3]);
     $caozuo = base64_decode($shuzu[4]);
     $tupian = base64_decode($shuzu[5]);
-    $jianjie = substr(base64_decode($shuzu[6]),&quot;0&quot;,&quot;400&quot;);
+    $jianjie = substr(base64_decode($shuzu[6]),"0","400");
     echo  &lt;&lt;&lt;EOF
 &lt;tr&gt;
-    &lt;td align=&quot;center&quot;&gt;$redu&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;$biaoti&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;$zuozhe&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;$fashijian&lt;/td&gt;
-    &lt;td align=&quot;center&quot;&gt;$caozuo&lt;/td&gt;
-&lt;/tr&gt;</code><p>EOF;<br>        if($i&lt;9){<br>            echo &lt;&lt;&lt;EOF<br>        <tr></tr></p>
-<pre><code>&lt;td&gt;&lt;a &gt;&lt;img src=&quot;{$tupian}&quot;&gt;&lt;/a&gt;&lt;/td&gt;
-&lt;td colspan=&quot;4&quot;&gt;$jianjie&lt;/tr&gt;</code></pre><p>EOF;<br>            $i++;<br>        }<br>    }<br>    ?&gt;</p>
-</table>
+    &lt;td align="center"&gt;$redu&lt;/td&gt;
+    &lt;td align="center"&gt;$biaoti&lt;/td&gt;
+    &lt;td align="center"&gt;$zuozhe&lt;/td&gt;
+    &lt;td align="center"&gt;$fashijian&lt;/td&gt;
+    &lt;td align="center"&gt;$caozuo&lt;/td&gt;
+&lt;/tr&gt;</code><p>EOF;<br>        if($i&lt;9){<br>            echo &lt;&lt;&lt;EOF<br>        </p><p></p><pre><code>&lt;td&gt;&lt;a &gt;&lt;img src="{$tupian}"&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td colspan="4"&gt;$jianjie&lt;/tr&gt;</code></pre><p>EOF;<br>            $i++;<br>        }<br>    }<br>    ?&gt;</p><table>
+    <tbody><tr>
+        <th><button><!--?php echo "热度✍"; ?--></button></th>
+        <th><!--?php echo "标题"; ?--></th>
+        <th><!--?php echo "作者"; ?--></th>
+        <th><!--?php echo "发表时间"; ?--></th>
+        <th><!--?php echo "操作"; ?--></th>
+    </tr>
+    <!--?php
+    $f = fopen("news.db","r");
+    $i=0;
+
+<pre--><tr></tr>
+
+</tbody></table>
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <center>版权所有  ICQ</center>
 <center>©2019 ICQ 意见反馈 京ICP证030173号  京公网安备11000002000001号 </center>
 
-</head></html>
 
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -948,7 +969,7 @@ while(!feof($f)){
                     <div class="summary block-with-text">
                         
                             basedirheader.php:
-12345678910111213141516171819202122232425262728293031323334&lt;!DOCTYPE html&gt;&lt;html lang=&quot;e
+12345678910111213141516171819202122232425262728293031323334&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt
                         
                     </div>
                     <div class="publish-info">
@@ -1169,13 +1190,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://feather-arch.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:unreal_plume@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1185,7 +1206,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3291414878" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3291414878" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

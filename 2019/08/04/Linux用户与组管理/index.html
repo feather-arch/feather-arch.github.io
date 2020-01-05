@@ -26,6 +26,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
 </head>
 
 
@@ -454,23 +455,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="useradd（建立用户账号）"><a href="#useradd（建立用户账号）" class="headerlink" title="useradd（建立用户账号）"></a>useradd（建立用户账号）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用法：useradd[参数][用户账号]</span><br><span class="line">-d  指定用户登入时的启动目录</span><br><span class="line">-g  指定用户所属群组</span><br><span class="line">-M  不要自动建立用户的登入目录</span><br><span class="line">-u  指定用户id</span><br><span class="line">-r  建立系统账号</span><br><span class="line">-s  指定用户登陆后所使用的shell</span><br></pre></td></tr></table></figure>
+                <h3 id="useradd（建立用户账号）"><a href="#useradd（建立用户账号）" class="headerlink" title="useradd（建立用户账号）"></a>useradd（建立用户账号）</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用法：useradd[参数][用户账号]</span><br><span class="line">-d  指定用户登入时的启动目录</span><br><span class="line">-g  指定用户所属群组</span><br><span class="line">-M  不要自动建立用户的登入目录</span><br><span class="line">-u  指定用户id</span><br><span class="line">-r  建立系统账号</span><br><span class="line">-s  指定用户登陆后所使用的shell</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="userdel-删除用户账户"><a href="#userdel-删除用户账户" class="headerlink" title="userdel (删除用户账户)"></a>userdel (删除用户账户)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用法： userdel [参数][用户账号]</span><br><span class="line">-r  删除用户登录目录以及目录中所有文件</span><br></pre></td></tr></table></figure>
+<h3 id="userdel-删除用户账户"><a href="#userdel-删除用户账户" class="headerlink" title="userdel (删除用户账户)"></a>userdel (删除用户账户)</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用法： userdel [参数][用户账号]</span><br><span class="line">-r  删除用户登录目录以及目录中所有文件</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="passwd-更改密码"><a href="#passwd-更改密码" class="headerlink" title="passwd (更改密码)"></a>passwd (更改密码)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">用法： passwd [参数][用户帐号]</span><br><span class="line">-d  删除密码</span><br><span class="line">-f  强制执行</span><br><span class="line">-l  停止账号使用</span><br><span class="line">-u  允许账号使用</span><br><span class="line">-g  修改群组密码</span><br></pre></td></tr></table></figure>
+<h3 id="passwd-更改密码"><a href="#passwd-更改密码" class="headerlink" title="passwd (更改密码)"></a>passwd (更改密码)</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">用法： passwd [参数][用户帐号]</span><br><span class="line">-d  删除密码</span><br><span class="line">-f  强制执行</span><br><span class="line">-l  停止账号使用</span><br><span class="line">-u  允许账号使用</span><br><span class="line">-g  修改群组密码</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="newgrp-用于登录另一个用户组"><a href="#newgrp-用于登录另一个用户组" class="headerlink" title="newgrp (用于登录另一个用户组)"></a>newgrp (用于登录另一个用户组)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用法  newgrp [组名]</span><br></pre></td></tr></table></figure>
+<h3 id="newgrp-用于登录另一个用户组"><a href="#newgrp-用于登录另一个用户组" class="headerlink" title="newgrp (用于登录另一个用户组)"></a>newgrp (用于登录另一个用户组)</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用法  newgrp [组名]</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="usermod-修改用户账号属性"><a href="#usermod-修改用户账号属性" class="headerlink" title="usermod (修改用户账号属性)"></a>usermod (修改用户账号属性)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用法： usermod [参数][用户账号]</span><br><span class="line">-s  修改用户登陆时的shell</span><br><span class="line">-g  修改用户所属群组</span><br><span class="line">-l  修改账户名称</span><br><span class="line">-u  修改用户id</span><br><span class="line">-L  锁定账户</span><br><span class="line">-U  接触密码锁定</span><br></pre></td></tr></table></figure>
+<h3 id="usermod-修改用户账号属性"><a href="#usermod-修改用户账号属性" class="headerlink" title="usermod (修改用户账号属性)"></a>usermod (修改用户账号属性)</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用法： usermod [参数][用户账号]</span><br><span class="line">-s  修改用户登陆时的shell</span><br><span class="line">-g  修改用户所属群组</span><br><span class="line">-l  修改账户名称</span><br><span class="line">-u  修改用户id</span><br><span class="line">-L  锁定账户</span><br><span class="line">-U  接触密码锁定</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="groupmode-修改用户组名"><a href="#groupmode-修改用户组名" class="headerlink" title="groupmode (修改用户组名)"></a>groupmode (修改用户组名)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用法：groupmode [参数][群组名称]</span><br><span class="line">-n  设置使用的群组名称</span><br></pre></td></tr></table></figure>
+<h3 id="groupmode-修改用户组名"><a href="#groupmode-修改用户组名" class="headerlink" title="groupmode (修改用户组名)"></a>groupmode (修改用户组名)</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用法：groupmode [参数][群组名称]</span><br><span class="line">-n  设置使用的群组名称</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="UID-用户身份标识符，"><a href="#UID-用户身份标识符，" class="headerlink" title="UID 用户身份标识符，"></a>UID 用户身份标识符，</h3><p>在centos7中UID 1-999为虚拟用户，不用登陆，无登陆权限。一般满足服务需求而创建的账户。普通用户1000起，超级用户是0.<br>Centos6普通用户500起，1-499为虚拟用户，超级用户是0.</p>
-<h3 id="passwd-文件"><a href="#passwd-文件" class="headerlink" title="passwd 文件"></a>passwd 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件用处：用于存放用户局可读</span><br><span class="line">存储格式： 用户名：密码散列：用户ID：用户组ID：用户信息：用户目录：用户登陆后使用的shell</span><br></pre></td></tr></table></figure>
+<h3 id="passwd-文件"><a href="#passwd-文件" class="headerlink" title="passwd 文件"></a>passwd 文件</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文件用处：用于存放用户局可读</span><br><span class="line">存储格式： 用户名：密码散列：用户ID：用户组ID：用户信息：用户目录：用户登陆后使用的shell</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="shadow"><a href="#shadow" class="headerlink" title="shadow"></a>shadow</h3><p>   文件用处：存放用户密码散列、密码管理信息等<br>    存储路径：/etc/shadow<br>    文件特点:文本格式/仅对root可读可写<br>    存储格式：用户名：加密的密码口令：上次修改口令日期：口令两次修改最小天数：口令两次修改最大天数：口令失效前多少天像用户警告：被禁止登录前的有效天数：账号被禁止登录时间：保留域</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -935,13 +954,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://feather-arch.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:unreal_plume@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -951,7 +970,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3291414878" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3291414878" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

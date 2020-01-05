@@ -28,6 +28,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
 </head>
 
 
@@ -487,7 +488,25 @@
 <p>4、将木马文件的后缀改为正常图片的后缀，使用burpsuite拦截上传数据，将其中的jpg改为php后缀，下发，即可绕过客户端检测。</p>
 <h4 id="MIME验证检测"><a href="#MIME验证检测" class="headerlink" title="MIME验证检测"></a>MIME验证检测</h4><p>MIME验证：多用途互联网邮件扩展类型。是设定某种扩展名文件用一种应用程序来打开的方式类型，当该扩展名文件被访问时，浏览器会自动使用指定的应用程序打开。多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。</p>
 <p>使用burpsuite抓包，修改Content为image/jpeg，</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -781,6 +800,7 @@ upload-labs3-13关第三关：
 查询数据库
 查询test 中的表
 
+        document.
                         
                     </div>
                     <div class="publish-info">
@@ -963,13 +983,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://feather-arch.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:unreal_plume@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -979,7 +999,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3291414878" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3291414878" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

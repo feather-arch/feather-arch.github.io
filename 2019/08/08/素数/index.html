@@ -27,6 +27,7 @@ $a=0;//计数器初始化for($i=1;$i&amp;lt;=$num;$i++){   if(">
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
 </head>
 
 
@@ -457,9 +458,27 @@ $a=0;//计数器初始化for($i=1;$i&amp;lt;=$num;$i++){   if(">
             <div id="articleContent">
                 <h3 id="素数"><a href="#素数" class="headerlink" title="素数"></a>素数</h3><p>&lt;?php<br>header(“charset=utf-8”);<br>$num = fgets(STDIN);<br>$num =  trim($num);</p>
 <p>$a=0;//计数器初始化<br>for($i=1;$i&lt;=$num;$i++)<br>{<br>   if($num % $i==0)<br>{<br>      $a++;<br>   }<br>}<br>if($a==2)//如果能够整除这个数只有1个或者2个，那么它就是素数<br>{<br>  echo $num .”是素数”;<br>}else<br>{<br>  echo $num.”不是素数”;<br>}</p>
-<h3 id="for遍历"><a href="#for遍历" class="headerlink" title="for遍历"></a>for遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$arr=[  </span><br><span class="line">  &apos;name&apos; =&gt;&apos;zs&apos;,  </span><br><span class="line">  &apos;age&apos; =&gt; 12,  </span><br><span class="line">  &apos;addr&apos; =&gt; &apos;bj&apos;</span><br><span class="line">];</span><br><span class="line"> echo $arr[&apos;addr&apos;];</span><br><span class="line"> echo &quot;&lt;br&gt;&quot;;</span><br><span class="line"> foreach ($arr as $key =&gt; $value)&#123;    </span><br><span class="line">     echo $key.&apos;=&gt;&apos;.$value.&apos;&lt;br&gt;&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="for遍历"><a href="#for遍历" class="headerlink" title="for遍历"></a>for遍历</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$arr=[  </span><br><span class="line">  'name' =&gt;'zs',  </span><br><span class="line">  'age' =&gt; 12,  </span><br><span class="line">  'addr' =&gt; 'bj'</span><br><span class="line">];</span><br><span class="line"> echo $arr['addr'];</span><br><span class="line"> echo "&lt;br&gt;";</span><br><span class="line"> foreach ($arr as $key =&gt; $value){    </span><br><span class="line">     echo $key.'=&gt;'.$value.'&lt;br&gt;';</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -712,11 +731,12 @@ $a=0;//计数器初始化for($i=1;$i&amp;lt;=$num;$i++){   if(">
 
 
 
-&lt;div class=&quot;top&quot;&gt;
+
+&lt;div class="top"&gt;
     &lt;h1&gt;登录&lt;/h1&gt;
 &lt;/div&gt;
 
-&lt
+&lt;form act
                         
                     </div>
                     <div class="publish-info">
@@ -936,13 +956,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://feather-arch.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:unreal_plume@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -952,7 +972,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3291414878" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3291414878" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

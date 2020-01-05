@@ -26,6 +26,7 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
+<link rel="alternate" href="/atom.xml" title="Evergreen" type="application/atom+xml">
 </head>
 
 
@@ -454,7 +455,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//五角星的上面一个角是等腰三角形</span><br><span class="line">for ($i = 1; $i &lt;=5; $i++) &#123;    </span><br><span class="line">    for ($j = 17-$i; $j &gt;=0;$j--)        </span><br><span class="line">        printf(&quot; &quot;);    </span><br><span class="line">    for ($k = 1; $k &lt;= 2 * $i-1; $k++)  </span><br><span class="line">        printf(&quot;*&quot;);   </span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//这是五角星的中间两个角 </span><br><span class="line">for ($i = 1; $i &lt; 5; $i++) &#123;    </span><br><span class="line">    for ($j = 1; $j &lt; 3 * $i - 3; $j++)       </span><br><span class="line">         printf(&quot; &quot;);     </span><br><span class="line">    for ($k = 1; $k &lt;= 42 - 6 * $i; $k++)       </span><br><span class="line">         printf(&quot;*&quot;);   </span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//这是中间与下部相接的部分</span><br><span class="line">for ($i= 1; $i &lt; 3; $i++) &#123;    </span><br><span class="line">    for ($j = 1; $j &lt; 12 - $i; $j++)        </span><br><span class="line">         printf(&quot; &quot;);   </span><br><span class="line">    for ($k = 1; $k &lt;= 12 + 2 * $i; $k++)        </span><br><span class="line">         printf(&quot;*&quot;);    </span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//这是五角星的下面两个角</span><br><span class="line">for ($i= 1; $i &lt; 5; $i++) &#123;    </span><br><span class="line">    for ($j = 1; $j&lt; 10 - $i; $j++)   </span><br><span class="line">         printf(&quot; &quot;);    </span><br><span class="line">    for ($k = 1; $k &lt;= 10 - 2 * $i; $k++)        </span><br><span class="line">         printf(&quot;*&quot;);    </span><br><span class="line">    for ($m = 1; $m &lt; 6 * $i - 3; $m++)        </span><br><span class="line">         printf(&quot; &quot;);    </span><br><span class="line">    for ($n = 1; $n &lt;= 10 - 2 * $i; $n++)        </span><br><span class="line">         printf(&quot;*&quot;);    </span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//五角星的上面一个角是等腰三角形</span><br><span class="line">for ($i = 1; $i &lt;=5; $i++) {    </span><br><span class="line">    for ($j = 17-$i; $j &gt;=0;$j--)        </span><br><span class="line">        printf(" ");    </span><br><span class="line">    for ($k = 1; $k &lt;= 2 * $i-1; $k++)  </span><br><span class="line">        printf("*");   </span><br><span class="line">    printf("\n");</span><br><span class="line">}</span><br><span class="line">//这是五角星的中间两个角 </span><br><span class="line">for ($i = 1; $i &lt; 5; $i++) {    </span><br><span class="line">    for ($j = 1; $j &lt; 3 * $i - 3; $j++)       </span><br><span class="line">         printf(" ");     </span><br><span class="line">    for ($k = 1; $k &lt;= 42 - 6 * $i; $k++)       </span><br><span class="line">         printf("*");   </span><br><span class="line">    printf("\n");</span><br><span class="line">}</span><br><span class="line">//这是中间与下部相接的部分</span><br><span class="line">for ($i= 1; $i &lt; 3; $i++) {    </span><br><span class="line">    for ($j = 1; $j &lt; 12 - $i; $j++)        </span><br><span class="line">         printf(" ");   </span><br><span class="line">    for ($k = 1; $k &lt;= 12 + 2 * $i; $k++)        </span><br><span class="line">         printf("*");    </span><br><span class="line">    printf("\n");</span><br><span class="line">}</span><br><span class="line">//这是五角星的下面两个角</span><br><span class="line">for ($i= 1; $i &lt; 5; $i++) {    </span><br><span class="line">    for ($j = 1; $j&lt; 10 - $i; $j++)   </span><br><span class="line">         printf(" ");    </span><br><span class="line">    for ($k = 1; $k &lt;= 10 - 2 * $i; $k++)        </span><br><span class="line">         printf("*");    </span><br><span class="line">    for ($m = 1; $m &lt; 6 * $i - 3; $m++)        </span><br><span class="line">         printf(" ");    </span><br><span class="line">    for ($n = 1; $n &lt;= 10 - 2 * $i; $n++)        </span><br><span class="line">         printf("*");    </span><br><span class="line">    printf("\n");</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -919,13 +938,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://feather-arch.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:unreal_plume@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -935,7 +954,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3291414878" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3291414878" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

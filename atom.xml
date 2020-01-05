@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Evergreen</title>
+  
+  <subtitle>Evergreen</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://feather-arch.github.io/"/>
+  <updated>2019-11-23T06:42:16.662Z</updated>
+  <id>https://feather-arch.github.io/</id>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>phpmyadmin,getshell的方法</title>
+    <link href="https://feather-arch.github.io/2019/10/23/phpmyadmin-getshell%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://feather-arch.github.io/2019/10/23/phpmyadmin-getshell%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2019-10-23T06:41:09.000Z</published>
+    <updated>2019-11-23T06:42:16.662Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;phpmyadmin，getshell的方法&quot;&gt;&lt;a href=&quot;#phpmyadmin，getshell的方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>upload-loads1-13关</title>
+    <link href="https://feather-arch.github.io/2019/09/23/upload-loads1-13%E5%85%B3/"/>
+    <id>https://feather-arch.github.io/2019/09/23/upload-loads1-13%E5%85%B3/</id>
+    <published>2019-09-23T06:45:47.000Z</published>
+    <updated>2019-11-23T06:47:00.794Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;title: upload-labs3-13关&lt;br&gt;date: 2019-09-14 08:55:44&lt;br&gt;tags:&lt;/p&gt;
+&lt;h2 id=&quot;upload-labs3-13关&quot;&gt;&lt;a href=&quot;#upload-labs3-13关&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>文件上传漏洞</title>
+    <link href="https://feather-arch.github.io/2019/09/20/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://feather-arch.github.io/2019/09/20/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</id>
+    <published>2019-09-20T07:00:51.000Z</published>
+    <updated>2019-10-28T00:56:11.804Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;文件上传测试&quot;&gt;&lt;a href=&quot;#文件上传测试&quot; class=&quot;headerlink&quot; title=&quot;文件上传测试&quot;&gt;&lt;/a&gt;文件上传测试&lt;/h3&gt;&lt;p&gt;1、测试是否前端检测&lt;br&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>通过拼接SQL语句，进行数据查询</title>
+    <link href="https://feather-arch.github.io/2019/08/13/%E9%80%9A%E8%BF%87%E6%8B%BC%E6%8E%A5SQL%E8%AF%AD%E5%8F%A5%EF%BC%8C%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/"/>
+    <id>https://feather-arch.github.io/2019/08/13/%E9%80%9A%E8%BF%87%E6%8B%BC%E6%8E%A5SQL%E8%AF%AD%E5%8F%A5%EF%BC%8C%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/</id>
+    <published>2019-08-13T13:53:38.000Z</published>
+    <updated>2019-08-14T03:48:28.211Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;查找字段数&quot;&gt;&lt;a href=&quot;#查找字段数&quot; class=&quot;headerlink&quot; title=&quot;查找字段数&quot;&gt;&lt;/a&gt;查找字段数&lt;/h4&gt;&lt;p&gt;使用二分法查询字段数&lt;/p&gt;
+&lt;p&gt;使用order by 40,显示存在40个字段。&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mysql作业</title>
+    <link href="https://feather-arch.github.io/2019/08/12/mysql%E4%BD%9C%E4%B8%9A/"/>
+    <id>https://feather-arch.github.io/2019/08/12/mysql%E4%BD%9C%E4%B8%9A/</id>
+    <published>2019-08-12T15:05:16.000Z</published>
+    <updated>2019-08-13T04:00:08.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;查看当前数据库&quot;&gt;&lt;a href=&quot;#查看当前数据库&quot; class=&quot;headerlink&quot; title=&quot;查看当前数据库&quot;&gt;&lt;/a&gt;查看当前数据库&lt;/h4&gt;&lt;p&gt;mysql&amp;gt; show databases;&lt;br&gt;+——————–+&lt;br&gt;|
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>作业</title>
+    <link href="https://feather-arch.github.io/2019/08/11/%E4%BD%9C%E4%B8%9A/"/>
+    <id>https://feather-arch.github.io/2019/08/11/%E4%BD%9C%E4%B8%9A/</id>
+    <published>2019-08-11T13:49:32.000Z</published>
+    <updated>2019-08-13T09:24:43.677Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;basedir&quot;&gt;&lt;a href=&quot;#basedir&quot; class=&quot;headerlink&quot; title=&quot;basedir&quot;&gt;&lt;/a&gt;basedir&lt;/h4&gt;&lt;p&gt;header.php:&lt;/p&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>新闻</title>
+    <link href="https://feather-arch.github.io/2019/08/11/%E6%96%B0%E9%97%BB/"/>
+    <id>https://feather-arch.github.io/2019/08/11/%E6%96%B0%E9%97%BB/</id>
+    <published>2019-08-11T13:49:15.000Z</published>
+    <updated>2019-08-11T14:18:29.256Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;登录页面&quot;&gt;&lt;a href=&quot;#登录页面&quot; class=&quot;headerlink&quot; title=&quot;登录页面&quot;&gt;&lt;/a&gt;登录页面&lt;/h3&gt;&lt;h5 id=&quot;login-html&quot;&gt;&lt;a href=&quot;#login-html&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>素数</title>
+    <link href="https://feather-arch.github.io/2019/08/08/%E7%B4%A0%E6%95%B0/"/>
+    <id>https://feather-arch.github.io/2019/08/08/%E7%B4%A0%E6%95%B0/</id>
+    <published>2019-08-08T14:42:47.000Z</published>
+    <updated>2019-08-08T14:57:24.699Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;素数&quot;&gt;&lt;a href=&quot;#素数&quot; class=&quot;headerlink&quot; title=&quot;素数&quot;&gt;&lt;/a&gt;素数&lt;/h3&gt;&lt;p&gt;&amp;lt;?php&lt;br&gt;header(“charset=utf-8”);&lt;br&gt;$num = fgets(STDIN);&lt;br&gt;$num
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>php输出五角星</title>
+    <link href="https://feather-arch.github.io/2019/08/07/php%E8%BE%93%E5%87%BA%E4%BA%94%E8%A7%92%E6%98%9F/"/>
+    <id>https://feather-arch.github.io/2019/08/07/php%E8%BE%93%E5%87%BA%E4%BA%94%E8%A7%92%E6%98%9F/</id>
+    <published>2019-08-07T13:07:09.000Z</published>
+    <updated>2019-08-07T15:33:11.682Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PHP</title>
+    <link href="https://feather-arch.github.io/2019/08/06/PHP/"/>
+    <id>https://feather-arch.github.io/2019/08/06/PHP/</id>
+    <published>2019-08-06T14:22:19.000Z</published>
+    <updated>2019-08-06T15:01:20.896Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;什么是PHP&quot;&gt;&lt;a href=&quot;#什么是PHP&quot; class=&quot;headerlink&quot; title=&quot;什么是PHP&quot;&gt;&lt;/a&gt;什么是PHP&lt;/h3&gt;&lt;p&gt;​    PHP是嵌入html页面的脚本语言&lt;br&gt;   目前最流行的网站开发语言&lt;br&gt;  
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>防火墙</title>
+    <link href="https://feather-arch.github.io/2019/08/05/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    <id>https://feather-arch.github.io/2019/08/05/%E9%98%B2%E7%81%AB%E5%A2%99/</id>
+    <published>2019-08-05T03:11:10.000Z</published>
+    <updated>2019-10-12T03:11:41.826Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;防火墙：&quot;&gt;&lt;a href=&quot;#防火墙：&quot; class=&quot;headerlink&quot; title=&quot;防火墙：&quot;&gt;&lt;/a&gt;防火墙：&lt;/h3&gt;&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>搭建LAMP</title>
+    <link href="https://feather-arch.github.io/2019/08/05/%E6%90%AD%E5%BB%BALAMP/"/>
+    <id>https://feather-arch.github.io/2019/08/05/%E6%90%AD%E5%BB%BALAMP/</id>
+    <published>2019-08-05T03:08:58.000Z</published>
+    <updated>2020-01-05T06:54:12.205Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;搭建LAMP环境&quot;&gt;&lt;a href=&quot;#搭建LAMP环境&quot; class=&quot;headerlink&quot; title=&quot;搭建LAMP环境&quot;&gt;&lt;/a&gt;搭建LAMP环境&lt;/h3&gt;&lt;h5 id=&quot;LAMP-linux-apache-mysql-php&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DVWA的安装过程</title>
+    <link href="https://feather-arch.github.io/2019/08/05/DVWA%E7%9A%84%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/"/>
+    <id>https://feather-arch.github.io/2019/08/05/DVWA%E7%9A%84%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/</id>
+    <published>2019-08-05T03:04:27.000Z</published>
+    <updated>2019-10-12T03:07:07.623Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;进入到-var-www目录下，然后wget下载dvwa文件。&quot;&gt;&lt;a href=&quot;#进入到-var-www目录下，然后wget下载dvwa文件。&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux的三种安装软件的方式</title>
+    <link href="https://feather-arch.github.io/2019/08/05/Linux%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E6%96%B9%E5%BC%8F/"/>
+    <id>https://feather-arch.github.io/2019/08/05/Linux%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E6%96%B9%E5%BC%8F/</id>
+    <published>2019-08-05T03:01:44.000Z</published>
+    <updated>2019-10-12T03:02:25.820Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Linux-三种安装软件的方式&quot;&gt;&lt;a href=&quot;#Linux-三种安装软件的方式&quot; class=&quot;headerlink&quot; title=&quot;Linux 三种安装软件的方式&quot;&gt;&lt;/a&gt;Linux 三种安装软件的方式&lt;/h2&gt;&lt;h3 id=&quot;通过yum-安装&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux用户与组管理</title>
+    <link href="https://feather-arch.github.io/2019/08/04/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E7%BB%84%E7%AE%A1%E7%90%86/"/>
+    <id>https://feather-arch.github.io/2019/08/04/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E7%BB%84%E7%AE%A1%E7%90%86/</id>
+    <published>2019-08-04T02:59:55.000Z</published>
+    <updated>2019-10-12T03:00:30.814Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;useradd（建立用户账号）&quot;&gt;&lt;a href=&quot;#useradd（建立用户账号）&quot; class=&quot;headerlink&quot; title=&quot;useradd（建立用户账号）&quot;&gt;&lt;/a&gt;useradd（建立用户账号）&lt;/h3&gt;&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux基础命令</title>
+    <link href="https://feather-arch.github.io/2019/08/01/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+    <id>https://feather-arch.github.io/2019/08/01/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</id>
+    <published>2019-08-01T02:57:02.000Z</published>
+    <updated>2019-10-12T02:58:26.431Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Linux基础命令&quot;&gt;&lt;a href=&quot;#Linux基础命令&quot; class=&quot;headerlink&quot; title=&quot;Linux基础命令&quot;&gt;&lt;/a&gt;Linux基础命令&lt;/h2&gt;&lt;h3 id=&quot;ls-列出目录&quot;&gt;&lt;a href=&quot;#ls-列出目录&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
