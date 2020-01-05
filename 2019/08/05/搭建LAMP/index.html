@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="">
+<html lang="zh-CN">
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="搭建LAMP, Hexo">
-    <meta name="description" content="搭建LAMP环境   LAMP=linux+apache+mysql+php
-安装apache1234yum install httpd* -y systemctl  start httpd systemctl enable httpd  ">
+    <meta name="keywords" content="搭建LAMP, Evergreen">
+    <meta name="description" content="搭建LAMP环境LAMP=linux+apache+mysql+php安装apacheyum install httpd* -y       用yum安装apache服务systemctl  start httpd     开启apache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>搭建LAMP | Hexo</title>
+    <title>搭建LAMP | Evergreen</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -39,7 +38,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Hexo</span>
+                    <span class="logo-span">Evergreen</span>
                 </a>
             </div>
             
@@ -53,7 +52,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -64,7 +63,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -75,7 +74,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -86,7 +85,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -97,7 +96,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -108,7 +107,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -119,14 +118,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -137,7 +136,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Hexo</div>
+        <div class="logo-name">Evergreen</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -155,7 +154,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -166,7 +165,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -177,7 +176,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -188,7 +187,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -199,7 +198,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -221,7 +220,7 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
@@ -425,7 +424,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -437,7 +436,7 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2019-08-05
                 </div>
                 
@@ -455,17 +454,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="搭建LAMP环境"><a href="#搭建LAMP环境" class="headerlink" title="搭建LAMP环境"></a>搭建LAMP环境</h3><p>   LAMP=linux+apache+mysql+php</p>
-<h3 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install httpd* -y </span><br><span class="line">systemctl  start httpd </span><br><span class="line">systemctl enable httpd  开启开机自启动</span><br><span class="line">systemctl  stop  firewalld  关闭防火墙</span><br></pre></td></tr></table></figure>
-
-<h3 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h3><p>  yum install php php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash -y     安装PHP默认php5.4<br>  升级需要执行以下命令<br>   rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/epel-release.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el7/epel-release.rpm</a><br>   rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/webtatic-release.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</a><br>   删除旧版本<br>  yum remove php-common -y</p>
-<h3 id="测试PHP"><a href="#测试PHP" class="headerlink" title="测试PHP"></a>测试PHP</h3><p>  php -v 显示版本<br>  php -r “echo phpinfo();” 创建phpinfo<br>  进入/var/www/html/ 创建test.php 文件中写入如下的代码：<br>  <?php phpinfo();?> 最后在浏览器中访问该页面</p>
+                <h3 id="搭建LAMP环境"><a href="#搭建LAMP环境" class="headerlink" title="搭建LAMP环境"></a>搭建LAMP环境</h3><h5 id="LAMP-linux-apache-mysql-php"><a href="#LAMP-linux-apache-mysql-php" class="headerlink" title="LAMP=linux+apache+mysql+php"></a>LAMP=linux+apache+mysql+php</h5><h3 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h3><h5 id="yum-install-httpd-y-用yum安装apache服务"><a href="#yum-install-httpd-y-用yum安装apache服务" class="headerlink" title="yum install httpd* -y       用yum安装apache服务"></a>yum install httpd* -y       用yum安装apache服务</h5><h5 id="systemctl-start-httpd-开启apache服务"><a href="#systemctl-start-httpd-开启apache服务" class="headerlink" title="systemctl  start httpd     开启apache服务"></a>systemctl  start httpd     开启apache服务</h5><h5 id="systemctl-enable-httpd-开启开机自启动"><a href="#systemctl-enable-httpd-开启开机自启动" class="headerlink" title="systemctl enable httpd  开启开机自启动"></a>systemctl enable httpd  开启开机自启动</h5><h5 id="systemctl-stop-firewalld-关闭防火墙"><a href="#systemctl-stop-firewalld-关闭防火墙" class="headerlink" title="systemctl  stop  firewalld  关闭防火墙"></a>systemctl  stop  firewalld  关闭防火墙</h5><h3 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h3><h5 id="yum-install-php-php-mysql-php-gd-libjpeg-php-ldap-php-odbc-php-pear-php-xml-php-xmlrpc-php-mbstring-php-bcmath-php-mhash-y-安装PHP默认php5-4"><a href="#yum-install-php-php-mysql-php-gd-libjpeg-php-ldap-php-odbc-php-pear-php-xml-php-xmlrpc-php-mbstring-php-bcmath-php-mhash-y-安装PHP默认php5-4" class="headerlink" title="yum install php php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash -y     安装PHP默认php5.4"></a>yum install php php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash -y     安装PHP默认php5.4</h5><h4 id="升级php需要执行以下命令"><a href="#升级php需要执行以下命令" class="headerlink" title="升级php需要执行以下命令"></a>升级php需要执行以下命令</h4><h5 id="rpm-Uvh-https-mirror-webtatic-com-yum-el7-epel-release-rpm"><a href="#rpm-Uvh-https-mirror-webtatic-com-yum-el7-epel-release-rpm" class="headerlink" title="rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm"></a>rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/epel-release.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el7/epel-release.rpm</a></h5><h5 id="rpm-Uvh-https-mirror-webtatic-com-yum-el7-webtatic-release-rpm"><a href="#rpm-Uvh-https-mirror-webtatic-com-yum-el7-webtatic-release-rpm" class="headerlink" title="rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm"></a>rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/webtatic-release.rpm" target="_blank" rel="noopener">https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</a></h5><h4 id="删除旧版本php"><a href="#删除旧版本php" class="headerlink" title="删除旧版本php"></a>删除旧版本php</h4><h5 id="yum-remove-php-common-y"><a href="#yum-remove-php-common-y" class="headerlink" title="yum remove php-common -y"></a>yum remove php-common -y</h5><h3 id="测试PHP"><a href="#测试PHP" class="headerlink" title="测试PHP"></a>测试PHP</h3><h5 id="php-v-显示php版本"><a href="#php-v-显示php版本" class="headerlink" title="php -v 显示php版本"></a>php -v 显示php版本</h5><p>  php -r “echo phpinfo();” 创建phpinfo<br>  进入/var/www/html/ 创建test.php 文件中写入如下的代码：<br>  <?php phpinfo();?> 最后在浏览器中访问该页面</p>
 <p> apache的配置文件位置：/etc/httpd/conf/httpd.conf</p>
 <p>serverroot 在apache配置文件中表示apache存放的位置</p>
 <p>documentroot 表示站点源码存放的位置 默认位置/var/www/html<br>(注意：修改完配置文件一定要重启服务)</p>
-<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><p>  yum install mariadb mariadb-server -y  安装mysql<br>  systemctl start mariadb<br>  systemctl enable mariadb</p>
-<p>  mysql_secure_installation   配置mysql<br>  mysql -Version   查看版本<br>  msyql默认端口3306<br>  在终端登录mysql<br>  mysql -uroot -p </p>
-
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><h5 id="yum-install-mariadb-mariadb-server-y-安装mysql"><a href="#yum-install-mariadb-mariadb-server-y-安装mysql" class="headerlink" title="yum install mariadb mariadb-server -y  安装mysql"></a>yum install mariadb mariadb-server -y  安装mysql</h5><h5 id="systemctl-start-mariadb"><a href="#systemctl-start-mariadb" class="headerlink" title="systemctl start mariadb"></a>systemctl start mariadb</h5><h5 id="systemctl-enable-mariadb"><a href="#systemctl-enable-mariadb" class="headerlink" title="systemctl enable mariadb"></a>systemctl enable mariadb</h5><h5 id="mysql-secure-installation-配置mysql"><a href="#mysql-secure-installation-配置mysql" class="headerlink" title="mysql_secure_installation   配置mysql"></a>mysql_secure_installation   配置mysql</h5><h5 id="mysql-Version-查看版本"><a href="#mysql-Version-查看版本" class="headerlink" title="mysql -Version   查看版本"></a>mysql -Version   查看版本</h5><h5 id="msyql默认端口3306"><a href="#msyql默认端口3306" class="headerlink" title="msyql默认端口3306"></a>msyql默认端口3306</h5><h4 id="在终端登录mysql"><a href="#在终端登录mysql" class="headerlink" title="在终端登录mysql:"></a>在终端登录mysql:</h4><h5 id="mysql-uroot-p"><a href="#mysql-uroot-p" class="headerlink" title="mysql -uroot -p"></a>mysql -uroot -p</h5>
             </div>
             <hr/>
 
@@ -476,34 +469,34 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com" rel="external nofollow noreferrer"></a>
+                    <a href="https://feather-arch.github.io" rel="external nofollow noreferrer"></a>
                 </span>
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2019/08/05/搭建LAMP/">http://yoursite.com/2019/08/05/搭建LAMP/</a>
+                    <a href="https://feather-arch.github.io/2019/08/05/搭建LAMP/">https://feather-arch.github.io/2019/08/05/搭建LAMP/</a>
                 </span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint polocy. If reproduced, please indicate source
-                    <a href="http://yoursite.com" target="_blank"></a>
+                    许可协议。转载请注明来源
+                    <a href="https://feather-arch.github.io" target="_blank"></a>
                     !
                 </span>
             </div>
@@ -512,7 +505,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -527,7 +520,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -693,7 +686,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2019/08/05/防火墙/">
                     <div class="card-image">
@@ -730,7 +723,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/08/05/DVWA的安装过程/">
@@ -800,7 +793,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -902,7 +895,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://yoursite.com" target="_blank"></a>
+            <a href="https://feather-arch.github.io" target="_blank"></a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -970,8 +963,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
