@@ -6,10 +6,38 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://feather-arch.github.io/"/>
-  <updated>2019-11-23T06:42:16.662Z</updated>
+  <updated>2020-01-06T12:49:13.203Z</updated>
   <id>https://feather-arch.github.io/</id>
   
+  <author>
+    <name>blue</name>
+    
+  </author>
+  
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟机的三种网络模式</title>
+    <link href="https://feather-arch.github.io/2020/01/06/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://feather-arch.github.io/2020/01/06/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E4%B8%89%E7%A7%8D%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/</id>
+    <published>2020-01-06T12:44:10.000Z</published>
+    <updated>2020-01-06T12:49:13.203Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;VMware有三种网络工作模式，它们分别是：&quot;&gt;&lt;a href=&quot;#VMware有三种网络工作模式，它们分别是：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>phpmyadmin,getshell的方法</title>
@@ -134,7 +162,7 @@
     <link href="https://feather-arch.github.io/2019/08/11/%E4%BD%9C%E4%B8%9A/"/>
     <id>https://feather-arch.github.io/2019/08/11/%E4%BD%9C%E4%B8%9A/</id>
     <published>2019-08-11T13:49:32.000Z</published>
-    <updated>2019-08-13T09:24:43.677Z</updated>
+    <updated>2020-01-06T12:50:29.568Z</updated>
     
     <summary type="html">
     
@@ -158,7 +186,7 @@
     <link href="https://feather-arch.github.io/2019/08/11/%E6%96%B0%E9%97%BB/"/>
     <id>https://feather-arch.github.io/2019/08/11/%E6%96%B0%E9%97%BB/</id>
     <published>2019-08-11T13:49:15.000Z</published>
-    <updated>2019-08-11T14:18:29.256Z</updated>
+    <updated>2020-01-06T12:50:16.609Z</updated>
     
     <summary type="html">
     
@@ -181,7 +209,7 @@
     <link href="https://feather-arch.github.io/2019/08/08/%E7%B4%A0%E6%95%B0/"/>
     <id>https://feather-arch.github.io/2019/08/08/%E7%B4%A0%E6%95%B0/</id>
     <published>2019-08-08T14:42:47.000Z</published>
-    <updated>2019-08-08T14:57:24.699Z</updated>
+    <updated>2020-01-06T12:50:03.648Z</updated>
     
     <summary type="html">
     
@@ -204,7 +232,7 @@
     <link href="https://feather-arch.github.io/2019/08/07/php%E8%BE%93%E5%87%BA%E4%BA%94%E8%A7%92%E6%98%9F/"/>
     <id>https://feather-arch.github.io/2019/08/07/php%E8%BE%93%E5%87%BA%E4%BA%94%E8%A7%92%E6%98%9F/</id>
     <published>2019-08-07T13:07:09.000Z</published>
-    <updated>2019-08-07T15:33:11.682Z</updated>
+    <updated>2020-01-06T12:51:13.203Z</updated>
     
     <summary type="html">
     
@@ -227,7 +255,7 @@
     <link href="https://feather-arch.github.io/2019/08/06/PHP/"/>
     <id>https://feather-arch.github.io/2019/08/06/PHP/</id>
     <published>2019-08-06T14:22:19.000Z</published>
-    <updated>2019-08-06T15:01:20.896Z</updated>
+    <updated>2020-01-06T12:50:41.829Z</updated>
     
     <summary type="html">
     
@@ -235,7 +263,7 @@
       
         
         
-          &lt;h3 id=&quot;什么是PHP&quot;&gt;&lt;a href=&quot;#什么是PHP&quot; class=&quot;headerlink&quot; title=&quot;什么是PHP&quot;&gt;&lt;/a&gt;什么是PHP&lt;/h3&gt;&lt;p&gt;​    PHP是嵌入html页面的脚本语言&lt;br&gt;   目前最流行的网站开发语言&lt;br&gt;  
+          &lt;h3 id=&quot;什么是PHP&quot;&gt;&lt;a href=&quot;#什么是PHP&quot; class=&quot;headerlink&quot; title=&quot;什么是PHP&quot;&gt;&lt;/a&gt;什么是PHP&lt;/h3&gt;&lt;p&gt;   PHP是嵌入html页面的脚本语言&lt;br&gt;   目前最流行的网站开发语言&lt;br&gt;  
         
       
     

